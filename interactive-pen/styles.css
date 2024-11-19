@@ -4,14 +4,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Ensure the page height matches the viewport */
     background-color: #f0f0f0;
+    overflow: hidden; /* Prevent scrolling */
   }
   
   .container {
-    position: relative;
-    width: 200px;
-    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full-width container */
+    height: 100%; /* Full-height container */
   }
   
   .pen {
@@ -24,7 +27,6 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    transform: translate(-50%, -50%);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
   }
@@ -54,72 +56,7 @@ body {
   .pen .cap {
     position: absolute;
     top: 0;
-    width: 24px;body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Full height to center the content vertically */
-        background-color: #f0f0f0;
-        overflow: hidden; /* Prevent scrolling */
-      }
-      
-      .container {
-        position: relative;
-        width: 200px;
-        height: 600px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .pen {
-        position: relative;
-        width: 20px;
-        height: 200px;
-        background: linear-gradient(90deg, #333, #555, #777);
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        transform: translate(-50%, -50%);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-      }
-      
-      /* Pen Tip */
-      .pen::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        width: 12px;
-        height: 20px;
-        background: linear-gradient(90deg, #000, #222);
-        border-radius: 50%;
-      }
-      
-      /* Grip Area */
-      .pen .grip {
-        position: absolute;
-        bottom: 20px;
-        width: 18px;
-        height: 30px;
-        background: linear-gradient(90deg, #444, #666);
-        border-radius: 8px;
-      }
-      
-      /* Pen Cap */
-      .pen .cap {
-        position: absolute;
-        top: 0;
-        width: 24px;
-        height: 50px;
-        background: linear-gradient(90deg, #222, #333, #444);
-        border-radius: 10px 10px 0 0;
-      }
-      
+    width: 24px;
     height: 50px;
     background: linear-gradient(90deg, #222, #333, #444);
     border-radius: 10px 10px 0 0;
