@@ -1,0 +1,120 @@
+
+#container {
+    display: grid;
+    grid-template-columns: [row1-start] 25% [row1-end] auto [last-line];
+}
+
+.sidebar-icon {
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.sidebar-icon svg {
+    fill: white;
+}
+
+
+.mainbar-container {
+    display: grid;
+    grid-template-rows: [col1-start] 18% [col1-end] auto [last-line];
+}
+
+.header-container {
+    display: grid;
+    grid-template-rows: [col1-start] 40% [col1-end] auto [last-line];;
+}
+
+.search-icon {
+    padding-left: 20px;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+.search {
+    padding-top: 10px;
+}
+
+input {
+    background-color: #E5E7EB;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+}
+
+.notification-icon {
+    width:  20px;
+    height: 20px;
+    padding-left: 20px;
+}
+
+.cat-head-image {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fee43d;
+    border-radius: 50%;
+    padding-left: 0px !important;
+    padding-top: 0px !important;
+    margin: 5px;
+}
+
+.name-text {
+    width: 100px;
+    height: 0x;
+}
+
+img {
+    width: 23px;
+    height: 23px;
+}
+
+
+.name-text .name-user {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.right-div {
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+
+.image-large {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fee43d !important;
+    border-radius: 50%;
+    margin: 10px;
+    margin-top: 6px;
+    margin-left: 14px;
+    padding: 0;
+}
+
+.image-large img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.greet-user {
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.name-morgan {
+    font-size: 15px;
+    font-weight: bold;
+}
