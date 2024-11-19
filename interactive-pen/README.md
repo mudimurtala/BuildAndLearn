@@ -13,3 +13,7 @@ A single-page interactive web project featuring a realistic pen that responds to
   - Mouse leave to make the pen stand vertically.
 - Fully responsive, with the pen perfectly centered on the page.
 
+## Technologies Used
+- **HTML5**: For structuring the page.
+- **CSS3**: For styling the pen and page layout.
+- **JavaScript**: For interactive behaviors.
