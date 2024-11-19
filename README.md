@@ -1,4 +1,4 @@
-# Random Projects Repository
+# BuildAndLearn
 
 This repository serves as a personal space for experimenting with and creating various programming and coding projects. Whenever I have free time or feel inspired, I work on ideas and push them here. These ideas may come from brainstorming, discovering something interesting online, or simply exploring concepts I want to bring to life through code.
 
