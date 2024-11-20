@@ -87,6 +87,7 @@ body {
 .elem-one {
     background: #ffffff;
     border-radius: 10px;
+    box-shadow: 0 5rem 10px grey;
 }
 
 .elem-two {
