@@ -1,7 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #container {
     display: grid;
+    width: 65%;
+    height: 100vh;
+    background-color: white;
     grid-template-columns: [row1-start] 25% [row1-end] auto [last-line];
+}
+
+.sidebar-container {
+    background-color:#60a5fa;
 }
 
 .sidebar-icon {
@@ -17,6 +37,11 @@
     fill: white;
 }
 
+.label-text {
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+}
 
 .mainbar-container {
     display: grid;
@@ -24,8 +49,36 @@
 }
 
 .header-container {
+    background-color:#ffffff;
     display: grid;
     grid-template-rows: [col1-start] 40% [col1-end] auto [last-line];;
+}
+
+.body-container {
+    background-color:#E5E7EB;
+    box-shadow: 0px 0px 3px 0px black;
+}
+
+.top-container, .bottom-container {
+    background-color:#ffffff;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container {
+    background-color: #ffffff;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.right-container {
+    background-color: #ffffff;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .search-icon {
@@ -88,6 +141,23 @@ img {
     padding-left: 15px;
 }
 
+.first-con {
+    background-color: #ffffff;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+
+.second-con {
+    background-color: #ffffff;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+}
+
 
 .image-large {
     width: 50px;
@@ -95,7 +165,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fee43d !important;
+    background-color: #fee43d;
     border-radius: 50%;
     margin: 10px;
     margin-top: 6px;
@@ -109,6 +179,11 @@ img {
     border-radius: 50%;
 }
 
+.text-large {
+    background-color: #ffffff;
+    width: 80%;
+}
+
 .greet-user {
     font-size: 9px;
     font-weight: bold;
@@ -117,4 +192,13 @@ img {
 .name-morgan {
     font-size: 15px;
     font-weight: bold;
+}
+
+.btn {
+    background-color: #60a5fa;
+    color: #ffffff;
+    border-radius: 25px;
+    border: none;
+    padding: 5px 17px;
+    cursor: pointer;
 }
