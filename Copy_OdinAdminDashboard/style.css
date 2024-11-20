@@ -1,3 +1,8 @@
+* {
+    outline: 2px solid red;
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -54,9 +59,21 @@ body {
     grid-template-rows: [col1-start] 40% [col1-end] auto [last-line];;
 }
 
-.body-container {
+/* .body-container {
     background-color:#E5E7EB;
     box-shadow: 0px 0px 3px 0px black;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: [row1-start] 65% [row1-end] auto [last-line];
+    gap: 10px;
+} */
+
+.right-body-con {
+    display: grid;
+    grid-template-columns: [first] 50% [line2] auto [end];
+    grid-template-rows: [first] 33% [line2] 33% [line3] auto [end];
+    gap: 10px 10px;
+    padding: 10px;
 }
 
 .top-container, .bottom-container {
