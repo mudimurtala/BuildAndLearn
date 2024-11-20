@@ -76,6 +76,10 @@ body {
     padding: 10px;
 }
 
+.elem-one {
+    background: #ffffff;
+}
+
 .top-container, .bottom-container {
     background-color:#ffffff;
     display: flex;
