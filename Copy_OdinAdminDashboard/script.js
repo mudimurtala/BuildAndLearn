@@ -72,9 +72,9 @@ const rightBodyCon = document.createElement("div");
 rightBodyCon.classList.add("right-body-con");
 bodyContainer.appendChild(rightBodyCon);
 
-// const leftBodyCon = document.createElement("div");
-// leftBodyCon.classList.add("left-body-con");
-// bodyContainer.appendChild(leftBodyCon);
+const leftBodyCon = document.createElement("div");
+leftBodyCon.classList.add("left-body-con");
+bodyContainer.appendChild(leftBodyCon);
 
 // const elemOne = document.createElement("div");
 // elemOne.classList.add("elem-one");
