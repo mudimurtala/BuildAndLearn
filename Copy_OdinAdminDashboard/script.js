@@ -76,11 +76,17 @@ const leftBodyCon = document.createElement("div");
 leftBodyCon.classList.add("left-body-con");
 bodyContainer.appendChild(leftBodyCon);
 
+const leftBodyConText = document.createElement("div");
+leftBodyConText.classList.add("left-body-con-text");
+leftBodyCon.appendChild(leftBodyConText);
+
 for (let i = 0; i < 6; i++) {
     const elemOne = document.createElement("div");
     elemOne.classList.add("elem-one");
     rightBodyCon.appendChild(elemOne);
 }
+
+
 
 for (let i = 0; i < 2; i++) {
     const elemTwo = document.createElement("div");
