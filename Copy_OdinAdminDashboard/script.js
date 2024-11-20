@@ -86,8 +86,8 @@ bodyContainer.appendChild(rightBodyCon);
 //     rightBodyCon.appendChild(elemOne);
 // }
 
-Array(6).fill().forEach(() => {
-    const elemOne = document.createElement("div");
-    elemOne.classList.add("elem-one");
-    rightBodyCon.appendChild(elemOne);
-});
+// Array(6).fill().forEach(() => {
+//     const elemOne = document.createElement("div");
+//     elemOne.classList.add("elem-one");
+//     rightBodyCon.appendChild(elemOne);
+// });
