@@ -81,9 +81,3 @@ for (let i = 0; i < 6; i++) {
     elemOne.classList.add("elem-one");
     rightBodyCon.appendChild(elemOne);
 }
-
-Array(6).fill().forEach(() => {
-    const elemOne = document.createElement("div");
-    elemOne.classList.add("elem-one");
-    rightBodyCon.appendChild(elemOne);
-});
