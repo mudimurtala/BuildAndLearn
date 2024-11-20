@@ -89,6 +89,10 @@ body {
     border-radius: 10px;
 }
 
+.elem-two {
+    background: #ffffff;
+    border-radius: 10px;
+}
 /* .elem-two:nth-child(1) {
     align-self: start;
 }
