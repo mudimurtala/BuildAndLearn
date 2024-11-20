@@ -88,6 +88,12 @@ body {
     border-radius: 10px;
 }
 
+.elem-two:nth-child(1) {
+    align-self: start;
+}
+
+
+
 .top-container, .bottom-container {
     background-color:#ffffff;
     display: flex;
