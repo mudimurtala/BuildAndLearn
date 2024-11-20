@@ -81,7 +81,7 @@ body {
     grid-template-rows: [first] 40% [line2] 40% [end];
     /* gap: 10px 10px; */
     padding: 10px;
-    row-gap: 50px;
+    row-gap: 70px;
 }
 
 .elem-one {
