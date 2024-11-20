@@ -89,12 +89,10 @@ body {
 }
 
 .elem-two:nth-child(1) {
-    display: grid;
     align-self: start;
 }
 
 .elem-two:nth-child(2) {
-    display: grid;
     align-self: end;
 }
 
