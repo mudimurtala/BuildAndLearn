@@ -76,9 +76,17 @@ body {
     padding: 10px;
 }
 
-.elem-one {
-    background: #ffffff;
+.left-body-con {
+    display: grid;
+    grid-template-rows: [first] 40% [line2] auto [end];
+    gap: 10px 10px;
+    padding: 10px;
 }
+
+/* .elem-one {
+    background: #ffffff;
+    border-radius: 10px;
+} */
 
 .top-container, .bottom-container {
     background-color:#ffffff;
