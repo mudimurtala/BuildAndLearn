@@ -78,7 +78,7 @@ body {
 
 .left-body-con {
     display: grid;
-    grid-template-rows: [first] 40% [line2] auto [end];
+    grid-template-rows: [first] 40% [line2] 40% [end];
     gap: 10px 10px;
     padding: 10px;
 }
