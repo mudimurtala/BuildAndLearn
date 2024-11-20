@@ -88,13 +88,13 @@ body {
     border-radius: 10px;
 }
 
-.elem-two:nth-child(1) {
+/* .elem-two:nth-child(1) {
     align-self: start;
 }
 
 .elem-two:nth-child(2) {
     align-self: end;
-}
+} */
 
 .top-container, .bottom-container {
     background-color:#ffffff;
