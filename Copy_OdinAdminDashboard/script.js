@@ -78,6 +78,7 @@ bodyContainer.appendChild(leftBodyCon);
 
 const leftBodyConText = document.createElement("div");
 leftBodyConText.classList.add("left-body-con-text");
+leftBodyConText.innerHTML = `<h1>Announcements</h1>`;
 leftBodyCon.appendChild(leftBodyConText);
 
 for (let i = 0; i < 6; i++) {
