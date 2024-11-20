@@ -68,3 +68,26 @@ buttonTexts.forEach((text) => {
     createAndAppendElement("button", secondCon, ["btn"], text);
 });
     
+const rightBodyCon = document.createElement("div");
+rightBodyCon.classList.add("right-body-con");
+bodyContainer.appendChild(rightBodyCon);
+
+// const leftBodyCon = document.createElement("div");
+// leftBodyCon.classList.add("left-body-con");
+// bodyContainer.appendChild(leftBodyCon);
+
+// const elemOne = document.createElement("div");
+// elemOne.classList.add("elem-one");
+// rightBodyCon.appendChild(elemOne);
+
+// for (let i = 0; i < 6; i++) {
+//     const elemOne = document.createElement("div");
+//     elemOne.classList.add("elem-one");
+//     rightBodyCon.appendChild(elemOne);
+// }
+
+Array(6).fill().forEach(() => {
+    const elemOne = document.createElement("div");
+    elemOne.classList.add("elem-one");
+    rightBodyCon.appendChild(elemOne);
+});
