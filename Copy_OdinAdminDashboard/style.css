@@ -92,7 +92,9 @@ body {
     align-self: start;
 }
 
-
+.elem-two:nth-child(2) {
+    align-self: end;
+}
 
 .top-container, .bottom-container {
     background-color:#ffffff;
