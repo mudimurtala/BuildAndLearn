@@ -94,6 +94,7 @@ body {
 }
 
 .elem-two:nth-child(2) {
+    display: grid;
     align-self: end;
 }
 
