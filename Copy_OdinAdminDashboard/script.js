@@ -68,9 +68,11 @@ buttonTexts.forEach((text) => {
     createAndAppendElement("button", secondCon, ["btn"], text);
 });
     
-const rightBodyCon = document.createElement("div");
-rightBodyCon.classList.add("right-body-con");
-bodyContainer.appendChild(rightBodyCon);
+// const rightBodyCon = document.createElement("div");
+// rightBodyCon.classList.add("right-body-con");
+// bodyContainer.appendChild(rightBodyCon);
+
+const rightBodyCon = createAndAppendElement("div", bodyContainer, ["right-body-con"]);
 
 const leftBodyCon = document.createElement("div");
 leftBodyCon.classList.add("left-body-con");
@@ -92,13 +94,13 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-fetch('text.json')
-    .then(response => response.json())
-    .then(textData => {
-        textData.forEach(textObj => {
-            elemOne.innerHTML = textObj.heading4;
-            elemOne.innerHTML = textObj.sentence;
-        });
-    });
+// fetch('text.json')
+//     .then(response => response.json())
+//     .then(textData => {
+//         textData.forEach(textObj => {
+//             elemOne.innerHTML = textObj.heading4;
+//             elemOne.innerHTML = textObj.sentence;
+//         });
+//     });
 
  
