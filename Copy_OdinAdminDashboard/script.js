@@ -74,9 +74,11 @@ buttonTexts.forEach((text) => {
 
 const rightBodyCon = createAndAppendElement("div", bodyContainer, ["right-body-con"]);
 
+const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con"]);
 // const leftBodyCon = document.createElement("div");
 // leftBodyCon.classList.add("left-body-con");
 // bodyContainer.appendChild(leftBodyCon);
+
 
 
 for (let i = 0; i < 6; i++) {
