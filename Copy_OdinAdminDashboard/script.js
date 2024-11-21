@@ -76,10 +76,6 @@ const leftBodyCon = document.createElement("div");
 leftBodyCon.classList.add("left-body-con");
 bodyContainer.appendChild(leftBodyCon);
 
-// const leftBodyConText = document.createElement("div");
-// leftBodyConText.classList.add("left-body-con-text");
-// leftBodyConText.innerHTML = `<p>Announcements</p>`;
-// leftBodyCon.appendChild(leftBodyConText);
 
 for (let i = 0; i < 6; i++) {
     const elemOne = document.createElement("div");
