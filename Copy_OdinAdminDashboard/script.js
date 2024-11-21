@@ -75,6 +75,7 @@ buttonTexts.forEach((text) => {
 const rightBodyCon = createAndAppendElement("div", bodyContainer, ["right-body-con"]);
 
 const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con"]);
+
 // const leftBodyCon = document.createElement("div");
 // leftBodyCon.classList.add("left-body-con");
 // bodyContainer.appendChild(leftBodyCon);
@@ -82,17 +83,18 @@ const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con
 
 
 for (let i = 0; i < 6; i++) {
-    const elemOne = document.createElement("div");
-    elemOne.classList.add("elem-one");
-    rightBodyCon.appendChild(elemOne);
+    // const elemOne = document.createElement("div");
+    // elemOne.classList.add("elem-one");
+    // rightBodyCon.appendChild(elemOne);
+    createAndAppendElement("div", rightBodyCon, ["elem-one"]);
 }
 
 
 
 for (let i = 0; i < 2; i++) {
-    const elemTwo = document.createElement("div");
-    elemTwo.classList.add("elem-two");
-    leftBodyCon.appendChild(elemTwo);
+    // const elemTwo = document.createElement("div");
+    // elemTwo.classList.add("elem-two");
+    // leftBodyCon.appendChild(elemTwo);
 }
 
 
