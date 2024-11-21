@@ -101,6 +101,6 @@ fetch('text.json')
     .then(textData => {
         textData.forEach(textObj => {
             elemOne.innerHTML = textObj.heading4;
-            elemOne.innerHTML = textObj.sentence;
+            
         });
     });
