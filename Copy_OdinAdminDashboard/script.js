@@ -105,19 +105,4 @@ fetch('text.json')
         });
     });
 
-    fetch('icons.json')
-    .then(response => response.json())
-    .then(iconsData => {
-        iconsData.forEach(iconObj => {
-            const sidebarIcon = document.createElement("div");
-            sidebarIcon.classList.add("sidebar-icon");
-            sidebarIcon.innerHTML = iconObj.icon;
-            
-            const labelText = document.createElement("span");
-            labelText.classList.add("label-text");
-            labelText.textContent = iconObj.label;
-            
-            sidebarIcon.appendChild(labelText);
-            sidebarContainer.appendChild(sidebarIcon);
-        });
-    });
+ 
