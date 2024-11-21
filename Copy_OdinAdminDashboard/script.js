@@ -96,17 +96,14 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-fetch('icons.json')
+fetch('text.json')
     .then(response => response.json())
-    .then(iconsData => {
-        iconsData.forEach(iconObj => {
-            const sidebarIcon = document.createElement("div");
-            sidebarIcon.classList.add("sidebar-icon");
-            sidebarIcon.innerHTML = iconObj.icon;
+    .then(textData => {
+        textData.forEach(textObj => {
+            elemOne.innerHTML = textObj.heading4;
             
-            const labelText = document.createElement("span");
-            labelText.classList.add("label-text");
-            labelText.textContent = iconObj.label;
+            
+            elemOne.innerHTML = textObj.sentence;
             
             sidebarIcon.appendChild(labelText);
             sidebarContainer.appendChild(sidebarIcon);
