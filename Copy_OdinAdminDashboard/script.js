@@ -102,8 +102,5 @@ fetch('text.json')
         textData.forEach(textObj => {
             elemOne.innerHTML = textObj.heading4;
             elemOne.innerHTML = textObj.sentence;
-            
-            sidebarIcon.appendChild(labelText);
-            sidebarContainer.appendChild(sidebarIcon);
         });
     });
