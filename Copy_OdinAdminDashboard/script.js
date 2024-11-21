@@ -72,6 +72,8 @@ const rightBodyCon = createAndAppendElement("div", bodyContainer, ["right-body-c
 
 const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con"]);
 
+
+
 for (let i = 0; i < 6; i++) {
     createAndAppendElement("div", rightBodyCon, ["elem-one"]);
 }
@@ -81,13 +83,13 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-fetch('text.json')
-    .then(response => response.json())
-    .then(textData => {
-        textData.forEach(textObj => {
-            elemOne.innerHTML = textObj.heading4;
-            elemOne.innerHTML = textObj.sentence;
-        });
-    });
+// fetch('text.json')
+//     .then(response => response.json())
+//     .then(textData => {
+//         textData.forEach(textObj => {
+//             elemOne.innerHTML = textObj.heading4;
+//             elemOne.innerHTML = textObj.sentence;
+//         });
+//     });
 
 
