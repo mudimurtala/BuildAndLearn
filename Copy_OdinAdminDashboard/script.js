@@ -81,13 +81,13 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-// fetch('text.json')
-//     .then(response => response.json())
-//     .then(textData => {
-//         textData.forEach(textObj => {
-//             elemOne.innerHTML = textObj.heading4;
-//             elemOne.innerHTML = textObj.sentence;
-//         });
-//     });
+fetch('text.json')
+    .then(response => response.json())
+    .then(textData => {
+        textData.forEach(textObj => {
+            elemOne.innerHTML = textObj.heading4;
+            elemOne.innerHTML = textObj.sentence;
+        });
+    });
 
- 
+
