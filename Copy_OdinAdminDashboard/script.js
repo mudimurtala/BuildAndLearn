@@ -82,18 +82,17 @@ for (let i = 0; i < 2; i++) {
     createAndAppendElement("div", leftBodyCon, ["elem-two"]);
 }
 
-const elemOne = createAndAppendElement("div", rightBodyCon, ["elem-one"]);
-
-const elemTwo = createAndAppendElement("div", leftBodyCon, ["elem-two"]);
 
 
-// fetch('text.json')
-//     .then(response => response.json())
-//     .then(textData => {
-//         textData.forEach(textObj => {
-//             elemOne.innerHTML = textObj.heading4;
-//             elemOne.innerHTML = textObj.sentence;
-//         });
-//     });
+
+fetch('text.json')
+    .then(response => response.json())
+    .then(textData => {
+        textData.forEach(textObj => {
+            const elemOne = createAndAppendElement("div", rightBodyCon, ["elem-one"]);
+            elemOne.innerHTML = textObj.heading4;
+            elemOne.innerHTML = textObj.sentence;
+        });
+    });
 
 
