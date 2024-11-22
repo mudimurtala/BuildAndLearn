@@ -94,6 +94,7 @@ body {
 .elem-one p {
     padding: 0 10px;
     font-size: 7px;
+    color: darkgreen;
 }
 
 .elem-one h4 {
