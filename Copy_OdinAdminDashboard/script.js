@@ -81,16 +81,17 @@ for (let i = 0; i < 2; i++) {
     createAndAppendElement("div", leftBodyCon, ["elem-two"]);
 }
 
-createAndAppendElement("div", rightBodyCon, ["elem-one"]);
 
 
-fetch('text.json')
-    .then(response => response.json())
-    .then(textData => {
-        textData.forEach(textObj => {
-            innerHTML = textObj.heading4;
-        });
-    });
+
+// createAndAppendElement("div", rightBodyCon, ["elem-one"]);
+// fetch('text.json')
+//     .then(response => response.json())
+//     .then(textData => {
+//         textData.forEach(textObj => {
+//             innerHTML = textObj.heading4;
+//         });
+//     });
 
 
 
