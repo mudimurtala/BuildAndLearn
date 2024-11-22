@@ -77,6 +77,8 @@ const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con
 //     createAndAppendElement("div", rightBodyCon, ["elem-one"]);
 // }
 
+
+
 for (let i = 0; i < 2; i++) {
     createAndAppendElement("div", leftBodyCon, ["elem-two"]);
 }
