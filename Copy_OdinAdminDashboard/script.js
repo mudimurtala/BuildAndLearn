@@ -73,26 +73,44 @@ const rightBodyCon = createAndAppendElement("div", bodyContainer, ["right-body-c
 const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con"]);
 
 
-
-for (let i = 0; i < 6; i++) {
-    createAndAppendElement("div", rightBodyCon, ["elem-one"]);
-}
+// for (let i = 0; i < 6; i++) {
+//     createAndAppendElement("div", rightBodyCon, ["elem-one"]);
+// }
 
 for (let i = 0; i < 2; i++) {
     createAndAppendElement("div", leftBodyCon, ["elem-two"]);
 }
 
-
+// createAndAppendElement("div", rightBodyCon, ["elem-one"]);
 
 
 // fetch('text.json')
 //     .then(response => response.json())
 //     .then(textData => {
 //         textData.forEach(textObj => {
-//             const elemOne = createAndAppendElement("div", rightBodyCon, ["elem-one"]);
-//             elemOne.innerHTML = textObj.heading4;
-//             elemOne.innerHTML = textObj.sentence;
+//             innerHTML = textObj.heading4;
 //         });
 //     });
 
 
+
+
+// Fetch data from text.json
+fetch('text.json')
+    .then(response => response.json())
+    .then(textData => {
+        // Loop through the data and create elements dynamically
+        textData.forEach((textObj) => {
+            // Create a new div for each item
+            const elemOne = createAndAppendElement("div", rightBodyCon, ["elem-one"]);
+            
+            // Set the innerHTML using the fetched data
+            elemOne.innerHTML = `
+                <h4>${textObj.heading4}</h4>
+                ${textObj.sentence}
+            `;
+        });
+    })
+    .catch(error => {
+        console.error("Error fetching text.json:", error);
+    });
