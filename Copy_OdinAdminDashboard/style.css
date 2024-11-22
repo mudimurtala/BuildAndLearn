@@ -97,6 +97,12 @@ body {
     font-weight: bold;
 }
 
+.elem-one h1 {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .elem-two {
     background: #ffffff;
     border-radius: 10px;
