@@ -93,14 +93,16 @@ body {
 
 .elem-one p {
     padding: 0 10px;
-    font-size: 7px;
+    font-size: 8px;
     color: darkgreen;
+    font-weight: 500;
 }
 
 .elem-one h4 {
-    padding: 4px 10px;
+    padding: px 10px;
     font-size: 12px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .elem-two {
