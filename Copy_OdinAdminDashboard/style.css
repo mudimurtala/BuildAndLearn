@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: 2px solid red;
-}
+} */
 
 
 html, body {
@@ -105,19 +105,20 @@ body {
     margin-bottom: 10px;
 }
 
+.elem-one div {
+    display: grid;
+    grid-template-columns: [first] 12.5% [line2] 12.5% [line3] 12.5% [line4] 12.5% [line5] 12.5% [line6] 12.5% [line7] 12.5% [line8] 12.5% [end];
+    grid-template-rows: [row1-start] auto [last-line];
+    justify-items: center;
+    align-items: center;
+}
+
 .elem-two {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 0px 1px 0px grey;
 }
 
-/* .elem-two:nth-child(1) {
-    align-self: start;
-}
-
-.elem-two:nth-child(2) {
-    align-self: end;
-} */
 
 .top-container, .bottom-container {
     background-color:#ffffff;
