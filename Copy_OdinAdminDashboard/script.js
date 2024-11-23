@@ -73,11 +73,6 @@ const rightBodyCon = createAndAppendElement("div", bodyContainer, ["right-body-c
 const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con"]);
 
 
-// for (let i = 0; i < 6; i++) {
-//     createAndAppendElement("div", rightBodyCon, ["elem-one"]);
-// }
-
-
 
 for (let i = 0; i < 2; i++) {
     createAndAppendElement("div", leftBodyCon, ["elem-two"]);
