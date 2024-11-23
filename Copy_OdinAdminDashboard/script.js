@@ -86,18 +86,6 @@ for (let i = 0; i < 2; i++) {
 
 
 
-// createAndAppendElement("div", rightBodyCon, ["elem-one"]);
-// fetch('text.json')
-//     .then(response => response.json())
-//     .then(textData => {
-//         textData.forEach(textObj => {
-//             innerHTML = textObj.heading4;
-//         });
-//     });
-
-
-
-
 // Fetch data from text.json
 fetch('text.json')
     .then(response => response.json())
