@@ -111,9 +111,11 @@ fetch('text.json')
             elemOne.innerHTML = `
                 <h4>${textObj.heading4}</h4>
                 ${textObj.sentence}
+                ${textObj.threeIcons}
             `;
         });
     })
     .catch(error => {
         console.error("Error fetching text.json:", error);
     });
+
