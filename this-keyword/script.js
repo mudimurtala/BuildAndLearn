@@ -6,11 +6,11 @@ const body = document.body;
 const themeToggler = {
   isDarkMode: false, // Current theme state
 
-  // Toggle Method
+  
   toggleTheme: function () {
     this.isDarkMode = !this.isDarkMode; // Toggle state
 
-    // Update the body's class based on the state
+    
     if (this.isDarkMode) {
       body.classList.remove('light-theme');
       body.classList.add('dark-theme');
