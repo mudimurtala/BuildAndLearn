@@ -9,6 +9,7 @@ const themeToggler = {
   toggleTheme: function () {
     this.isDarkMode = !this.isDarkMode; // Toggle state
 
+    
     if (this.isDarkMode) {
       body.classList.remove('light-theme');
       body.classList.add('dark-theme');
@@ -21,6 +22,7 @@ const themeToggler = {
   },
 };
 
+// Add click event to the button and bind the toggle method
 toggleButton.addEventListener('click', function () {
   themeToggler.toggleTheme();
 });
