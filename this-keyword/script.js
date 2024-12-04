@@ -1,16 +1,14 @@
-// Select the toggle button and body
+
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Theme Toggle Object
 const themeToggler = {
   isDarkMode: false, // Current theme state
 
-  // Toggle Method
+  
   toggleTheme: function () {
     this.isDarkMode = !this.isDarkMode; // Toggle state
 
-    // Update the body's class based on the state
     if (this.isDarkMode) {
       body.classList.remove('light-theme');
       body.classList.add('dark-theme');
@@ -23,7 +21,6 @@ const themeToggler = {
   },
 };
 
-// Add click event to the button and bind the toggle method
 toggleButton.addEventListener('click', function () {
   themeToggler.toggleTheme();
 });
