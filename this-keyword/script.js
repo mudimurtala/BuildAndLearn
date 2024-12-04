@@ -8,7 +8,7 @@ const themeToggler = {
 
   
   toggleTheme: function () {
-    this.isDarkMode = !this.isDarkMode; // Toggle state
+    this.isDarkMode = !this.isDarkMode; 
 
     
     if (this.isDarkMode) {
