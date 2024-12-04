@@ -23,7 +23,7 @@ const themeToggler = {
   },
 };
 
-// Add click event to the button and bind the toggle method
+
 toggleButton.addEventListener('click', function () {
   themeToggler.toggleTheme();
 });
