@@ -19,7 +19,6 @@ const themeToggler = {
   },
 };
 
-
 toggleButton.addEventListener('click', function () {
   themeToggler.toggleTheme();
 });
