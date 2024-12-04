@@ -1,8 +1,8 @@
-// Select the toggle button and body
+
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Theme Toggle Object
+
 const themeToggler = {
   isDarkMode: false, // Current theme state
 
