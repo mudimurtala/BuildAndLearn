@@ -46,4 +46,4 @@ function sumOfTripledEvens(array) {
   return sum; // Step 5: Return the final sum
 }
 
-console.log(sumOfTripledEvens([1, 2, 3, 4])); // Output: 18
+console.log(sumOfTripledEvens([1, 2, 3, 4, 5, 6, 7, 8, 9])); // Output: 18
