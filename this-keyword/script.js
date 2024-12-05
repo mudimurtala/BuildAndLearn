@@ -44,3 +44,10 @@
 
 // console.log(sumOfTripledEvens(numbers)); // 60
 
+function takesArrayOfNum(array) {
+  return array
+
+}
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(takesArrayOfNum(numbers));
