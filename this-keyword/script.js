@@ -53,6 +53,11 @@
 // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 17, 55];
 // console.log(sumAllNum(numbers));
 
-const arr = [1, 2, 3, 4, 5, 6, 7];
-const product = arr.reduce((acc, curr) => acc * curr, 1);
-console.log(product); // Output: 120
+function sumOfTripledEvens(array) {
+  return array
+    .filter((num) => num % 2 === 0) // Step 1: Keep even numbers
+    .map((num) => num * 3)          // Step 2: Triple the numbers
+    .reduce((acc, curr) => acc + curr, 0); // Step 3: Sum them up
+}
+
+console.log(sumOfTripledEvens([1, 2, 3, 4, 5, 10, 15, 67, 98, 55, 43, 80, 29])); // Output: 18
