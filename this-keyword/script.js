@@ -40,5 +40,7 @@ function sumOfTripledEvens(array) {
     .reduce((sum, num) => sum + num, 0); // Add them all up
 }
 
-console.log(sumOfTripledEvens([1, 2, 3, 4, 5, 6])); // Output: 18
+
+
+console.log(sumOfTripledEvens()); // Output: 18
 
