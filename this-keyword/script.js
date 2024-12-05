@@ -54,6 +54,8 @@
 // console.log(sumAllNum(numbers));
 
 const arr = [1, 2, 3, 4, 5];
-const oddNums = arr.filter((num) => num % 2 !== 0);
+const product = arr.reduce((total, currentItem) => {
+  return total * currentItem; // Multiply total with the current item
+}, 1); // Start with an initial value of 1
 
-console.log(oddNums); // Output: [1, 3, 5]
+console.log(product); // Output: 120 (1 * 2 * 3 * 4 * 5)
