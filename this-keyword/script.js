@@ -53,6 +53,6 @@
 // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 17, 55];
 // console.log(sumAllNum(numbers));
 
-const arr = [1, 2, 3, 4, 5];
+const arr = [1, 2, 3, 4, 5, 6, 7];
 const product = arr.reduce((acc, curr) => acc * curr, 1);
 console.log(product); // Output: 120
