@@ -119,6 +119,33 @@ body {
     box-shadow: 0px 0px 1px 0px grey;
 }
 
+.elem-two span {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 10px 10px;
+    padding-bottom: 15px;
+}
+
+.elem-two p {
+    font-size: 6px;
+    font-weight: 500;
+    color: darkgreen;
+    padding: 10px 10px;
+}
+
+/* .trending-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-box {
+    padding: 0;
+    margin: 0;
+    width: 40%;
+    height: 0%;
+    text-wrap: nowrap;
+
+} */
 
 .top-container, .bottom-container {
     background-color:#ffffff;

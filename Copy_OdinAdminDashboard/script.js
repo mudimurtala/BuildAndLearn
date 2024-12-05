@@ -74,9 +74,9 @@ const leftBodyCon = createAndAppendElement("div", bodyContainer, ["left-body-con
 
 
 
-for (let i = 0; i < 2; i++) {
-    createAndAppendElement("div", leftBodyCon, ["elem-two"]);
-}
+// for (let i = 0; i < 2; i++) {
+//     createAndAppendElement("div", leftBodyCon, ["elem-two"]);
+// }
 
 
 
@@ -102,3 +102,54 @@ fetch('text.json')
         console.error("Error fetching text.json:", error);
     });
 
+
+
+
+
+    const jsonFiles = [
+        { 
+            url: "announcements.json", 
+            handleData: handleAnnouncements 
+        },
+        { 
+            url: "trending.jso", 
+            handleData: handleTrending 
+        }
+    ];
+    
+    for (let i = 0; i < 2; i++) {
+        // Create a new div element
+        const elem = createAndAppendElement("div", leftBodyCon, ["elem-two"]);
+        
+        // Fetch the corresponding JSON file
+        fetch(jsonFiles[i].url)
+            .then(response => response.json())
+            .then(data => {
+                // Call the specific handler function for this JSON file
+                jsonFiles[i].handleData(elem, data);
+            })
+            .catch(error => {
+                console.error(`Error fetching ${jsonFiles[i].url}:`, error);
+            });
+    }
+    
+    // Function to handle data for announcements.json
+    function handleAnnouncements(elem, data) {
+        elem.innerHTML = data.map(item => `
+            <div class="announcement-item">
+                ${item.heading}
+                ${item.content}
+            </div>
+        `).join('');
+    }
+    
+    // Function to handle data for trending.json
+    function handleTrending(elem, data) {
+        elem.innerHTML = data.map(item => `
+            <div class="trending-item">
+                ${item.imageBox}
+                ${item.textBox}
+            </div>
+        `).join('');
+    }
+    
