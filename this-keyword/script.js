@@ -44,11 +44,11 @@
 
 // console.log(sumOfTripledEvens(numbers)); // 60
 
-function filterOddNum(array) {
+function squareEachNum(array) {
   return array
     .map((num) => num * num)
 
 }
 
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 17, 55];
-console.log(filterOddNum(numbers));
+console.log(squareEachNum(numbers));
