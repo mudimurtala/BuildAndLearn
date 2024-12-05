@@ -33,9 +33,6 @@
 
 // console.log(car.getBrand()); // Honda
 
-function addOne(num) {
-  return num + 1;
-}
 const arr = [1, 2, 3, 4, 5];
-const mappedArr = arr.map(addOne);
+const mappedArr = arr.map((num) => num + 1);
 console.log(mappedArr); // Outputs [2, 3, 4, 5, 6]
