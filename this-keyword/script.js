@@ -44,11 +44,11 @@
 
 // console.log(sumOfTripledEvens(numbers)); // 60
 
-function squareEachNum(array) {
+function sumAllNum(array) {
   return array
-    .map((num) => num * num)
+    .reduce((sum, num) => sum + num, 0);
 
 }
 
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 17, 55];
-console.log(squareEachNum(numbers));
+console.log(sumAllNum(numbers));
