@@ -38,4 +38,4 @@ function addOne(num) {
 
 let count = 5;
 
-console.log(addOne(count));
+console.log(8);
