@@ -33,13 +33,14 @@
 
 // console.log(car.getBrand()); // Honda
 
-function sumOfTripledEvens(array) {
-  return array
-    .filter((num) => num % 2 === 0) // Keep only even numbers
-    .map((num) => num * 3)          // Triple each even number
-    .reduce((sum, num) => sum + num, 0); // Add them all up
-}
+// function sumOfTripledEvens(array) {
+//   return array
+//     .filter((num) => num % 2 === 0) // Keep only even numbers
+//     .map((num) => num * 3)          // Triple each even number
+//     .reduce((sum, num) => sum + num, 0); // Add them all up
+// }
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-console.log(sumOfTripledEvens(numbers)); // 60
+// console.log(sumOfTripledEvens(numbers)); // 60
+
