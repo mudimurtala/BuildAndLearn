@@ -35,7 +35,6 @@
 function addOne(num) {
   return num + 1;
 }
-
-let count = 5;
-
-console.log(8);
+const arr = [1, 2, 3, 4, 5];
+const mappedArr = arr.map(addOne);
+console.log(mappedArr); // Outputs [2, 3, 4, 5, 6]
