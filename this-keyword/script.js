@@ -32,6 +32,7 @@
 // };
 
 // console.log(car.getBrand()); // Honda
+
 function addOne(num) {
   return num + 1;
 }
