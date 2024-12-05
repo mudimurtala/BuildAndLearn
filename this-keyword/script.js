@@ -44,11 +44,21 @@
 
 // console.log(sumOfTripledEvens(numbers)); // 60
 
-function sumAllNum(array) {
-  return array
-    .reduce((sum, num) => sum + num, 0);
+// function sumAllNum(array) {
+//   return array
+//     .reduce((sum, num) => sum + num, 0);
 
+// }
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 17, 55];
+// console.log(sumAllNum(numbers));
+
+function isOdd(num) {
+  return num % 2 !== 0; // Returns true for odd numbers
 }
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 17, 55];
-console.log(sumAllNum(numbers));
+const arr = [1, 2, 3, 4, 5];
+const oddNums = arr.filter(isOdd); // Filters out only odd numbers
+
+console.log(oddNums); // Output: [1, 3, 5]
+console.log(arr); // Original array is unchanged: [1, 2, 3, 4, 5]
