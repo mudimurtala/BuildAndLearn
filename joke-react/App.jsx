@@ -20,7 +20,7 @@ import Joke from "./Joke"
 
 export default function App() {
     return (
-        <>
+        <main>
             <Joke 
                 Setup="I got my daughter a fridge for her birthday."
                 Punchline="I can't wait to see her face light up when she opens it."
@@ -42,6 +42,6 @@ export default function App() {
                 Setup="What's the best thing about Switzerland?"
                 Punchline="I don't know, but the flag is a big plus!"
             />
-        </>
+        </main>
     )
 }
