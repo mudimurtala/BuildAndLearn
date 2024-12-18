@@ -2,7 +2,7 @@ export default function Contact() {
     return (
         <article className="contact-card">
             <img
-                src="public/images/mr-whiskerson.png"
+                src="/images/mr-whiskerson.png"
                 alt="Photo of Mr. Whiskerson"
             />
             <h3>Mr. Whiskerson</h3>
