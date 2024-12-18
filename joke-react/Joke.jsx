@@ -1,5 +1,9 @@
 export default function Joke(prop) {
     return (
-        <h1>{prop.Setup} <br /> {prop.Punchline}</h1>
+        <>
+            <p className="setup">{prop.Setup}</p>
+            <p className="punchline">{prop.Punchline}</p>
+            <hr />
+        </>
     )
 }
