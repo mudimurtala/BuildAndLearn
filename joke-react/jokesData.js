@@ -22,5 +22,9 @@ export default [
     {
         setup: "Can I drink ocean water?",
         punchline: "Yes for sure, more importantly when you're dehydrated!"
+    },
+    {
+        setup: "How many objects are there in the sky?",
+        punchline: "Only one, but if you count well!"
     }
 ]
