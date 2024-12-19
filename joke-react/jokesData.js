@@ -18,5 +18,9 @@ export default [
     {
         setup: "What's the best thing about Switzerland?",
         punchline: "I don't know, but the flag is a big plus!"
+    },
+    {
+        setup: "Can I drink ocean water?",
+        punchline: "Yes for sure, more importantly when you're dehydrated!"
     }
 ]
