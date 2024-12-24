@@ -16,7 +16,7 @@ export default function Contact(props) {
                 src={props.img}
                 alt="Photo of Mr. Whiskerson"
             />
-            <h3>Mr. Whiskerson</h3>
+            <h3>{props.name}</h3>
             <div className="info-group">
                 <img
                     src="./images/phone-icon.png"
