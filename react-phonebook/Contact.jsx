@@ -22,7 +22,7 @@ export default function Contact(props) {
                     src="./images/phone-icon.png"
                     alt="phone icon"
                 />
-                <p>(212) 555-1234</p>
+                <p>{props.phone}</p>
             </div>
             <div className="info-group">
                 <img
