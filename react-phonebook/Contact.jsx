@@ -1,11 +1,3 @@
-/**
- * Challenge: Fix the code below to use the `props`
- * object values in place of the hardcoded values below
- * 
- * Note: There will be a small bug in the code, so do your
- * best to squash it! 🐛
- */
-
 
 
 export default function Contact({img, name, phone, email}) {
