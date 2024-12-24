@@ -29,7 +29,7 @@ export default function Contact(props) {
                     src="./images/mail-icon.png"
                     alt="mail icon"
                 />
-                <p>mr.whiskaz@catnap.meow</p>
+                <p>{props.email}</p>
             </div>
         </article>
     )
