@@ -34,9 +34,18 @@ export default function App() {
                 setup="Why don't pirates travel on mountain roads?"
                 punchline="Scurvy."
             />
-            <Joke />
-            <Joke />
-            <Joke />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?"
+                punchline="Swarm."
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?"
+                punchline="I don't know, but the flag is a big plus!"
+            />
+            <Joke 
+                setup="I love the gaze in your eyes"
+                punchline="That's quite funny"
+            />
         </>
     )
 }
