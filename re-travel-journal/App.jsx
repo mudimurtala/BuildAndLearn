@@ -16,7 +16,7 @@ export default function App() {
         return (
             <Entry 
                 key={item.id}
-                item={item}
+                {...item}
                 // img={{
                 //     src: item.img.src,
                 //     alt: item.img.alt
