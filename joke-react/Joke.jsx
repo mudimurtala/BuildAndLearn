@@ -1,20 +1,9 @@
-export default function Joke(props) {
+export default function Joke() {
     return (
         <>
-            <p className="setup">Setup: {props.setup}</p>
-            <p className="punchline">Punchline: {props.punchline}</p>
-            <hr />
+            
         </>
     )
 }
 
 
-// export default function Joke(props) {
-//     return (
-//         <>
-//             {props.setup && <p className="setup">Setup: {props.setup}</p>}
-//             <p className="punchline">Punchline: {props.punchline}</p>
-//             <hr />
-//         </>
-//     )
-// }
