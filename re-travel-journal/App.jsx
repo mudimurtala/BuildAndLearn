@@ -16,17 +16,18 @@ export default function App() {
         return (
             <Entry 
                 key={item.id}
-                img={{
-                    src: item.img.src,
-                    alt: item.img.alt
-                }}
-                // Or this bolow
-                // img={item.img}
-                title={item.title}
-                country={item.country}
-                googleMapsLink={item.googleMapsLink}
-                dates={item.dates}
-                text={item.text}
+                item={item}
+                // img={{
+                //     src: item.img.src,
+                //     alt: item.img.alt
+                // }}
+                // // Or this bolow
+                // // img={item.img}
+                // title={item.title}
+                // country={item.country}
+                // googleMapsLink={item.googleMapsLink}
+                // dates={item.dates}
+                // text={item.text}
             />
         )
     })
