@@ -24,6 +24,7 @@ export default function App() {
         <main>
             <Joke 
                 punchline="I can't wait to see her face light up when she opens it."
+                upvote={10}
             />
             <Joke 
                 setup="How did the hacker escape the police?"
