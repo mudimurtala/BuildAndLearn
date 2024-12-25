@@ -1,8 +1,9 @@
 export default function Joke(props) {
+    console.log(props)
     return (
         <>
-            <p className="setup">Setup: </p><span>{props.setup}</span>
-            <p className="setup">Punchline: </p><span>{props.punchline}</span>
+            <p className="setup">{props.setup}</p>
+            <p className="punchline">{props.punchline}</p>
             <hr />
         </>
     )
