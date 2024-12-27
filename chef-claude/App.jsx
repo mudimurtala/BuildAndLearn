@@ -1,4 +1,5 @@
 import Header from "./Header"
+import Main from "./Main"
 
 /**
  * Challenge: Build the Header component in a separate file
@@ -8,6 +9,9 @@ import Header from "./Header"
 
 export default function App() {
     return (
-        <Header />
+        <>
+            <Header />
+            <Main />
+        </>
     )
 }
