@@ -1,5 +1,14 @@
 export default function Main() {
     return (
-        <h1>this is main</h1>
+        <main>
+            <form action="">
+                <input 
+                    type="text"
+                    placeholder="e.g. oregano"
+                    aria-label="Add ingredient"
+                />
+                <button>Add ingredient</button>
+            </form>
+        </main>
     )
 }
