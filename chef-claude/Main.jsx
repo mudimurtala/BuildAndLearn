@@ -1,7 +1,7 @@
 export default function Main() {
     return (
         <main>
-            <form action="">
+            <form action="" className="add-ingredient-form">
                 <input 
                     type="text"
                     placeholder="e.g. oregano"
