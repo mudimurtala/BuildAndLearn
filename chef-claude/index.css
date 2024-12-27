@@ -62,14 +62,3 @@ main {
     content: "+";
     margin-right: 5px;
 }
-
-/* 
-
-
-
-
-.add-ingredient-form > button::before {
-    content: "+";
-    margin-right: 5px;
-}
-*/
