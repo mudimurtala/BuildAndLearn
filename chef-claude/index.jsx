@@ -16,7 +16,7 @@ function App() {
                 alt="Placeholder image for Picsum" 
             />
             <button onClick={onClickFunc}>Click me</button>
-            <button onClick={handleClick}>
+            <button onDone={handleClick}>
                 I don't do anything
             </button>
         </main>
