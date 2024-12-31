@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 30px;
     background-color: whitesmoke;
+
 }
 
 .container {
@@ -16,12 +17,12 @@ body {
 
 .container > img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10PX;
     transition: filter .1s ease-in-out;
 }
 
 .container > img:hover {
-    filter: brightness(120%);
+    filter: brightness(120%)
 }
 
 .container > button {
@@ -35,3 +36,4 @@ body {
     font-family: 'Karla', sans-serif;
     font-size: 1.3rem;
 }
+
