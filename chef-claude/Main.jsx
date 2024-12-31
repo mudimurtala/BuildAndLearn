@@ -7,7 +7,8 @@ export default function Main() {
         </li>
     )
 
-    function handleSubmit() {
+    function handleSubmit(event) {
+        event.preventDefault()
         console.log("Form submitted!")
     }
     
@@ -24,6 +25,7 @@ export default function Main() {
                     type="text"
                     placeholder="e.g. oregano"
                     aria-label="Add ingredient"
+                    name="ingredient"
                 />
                 <button>
                     Add ingredient
