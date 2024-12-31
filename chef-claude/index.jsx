@@ -1,25 +1,5 @@
 import ReactDom from "react-dom/client";
+import App from "./App"
 
-function App() {
-    function onClickFunc() {
-        console.log("It is Clicked")
-    }
 
-    function handleMouseHover() {
-        console.log("Mouse Hovered!")
-    }
-
-    return (
-        <main className="container">
-            <img
-                onMouseOver={handleMouseHover}
-                src="https://picsum.photos/640/360" 
-                alt="Placeholder image for Picsum" 
-            />
-            <button onClick={onClickFunc}>Click me</button>
-            
-        </main>
-    )
-}
-
-ReactDom.createRoot(document.getElementById("root")).render(<App />)
+ReactDom.createRoot(document.getElementById("root")).render(<App />);
