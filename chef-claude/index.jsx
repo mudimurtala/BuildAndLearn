@@ -7,7 +7,7 @@ function App() {
                 src="https://picsum.photos/640/360" 
                 alt="Placeholder image for Picsum" 
             />
-            <button onClick={function() {console.log("Clicked")}}>Click me</button>
+            <button onClick={() => console.log("Clicked")}>Click me</button>
         </main>
     )
 }
