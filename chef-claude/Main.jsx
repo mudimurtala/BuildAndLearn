@@ -1,9 +1,11 @@
 export default function Main() {
 
     const ingredients = ["Chicken", "Oregano", "Tomatoes"]
-    const ingo = ingredients.map((item) => {
-        return <li>{item}</li>
-    })
+    const ingredientsListItems = ingredients.map(ingredient =>
+        <li key={ingredient}>
+            {ingredient}
+        </li>
+    )
     
     /**
      * Review Challenge:
@@ -24,7 +26,7 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
             <ul>
-                {ingo}
+                {ingredientsListItems}
             </ul>
         </main>
     )
