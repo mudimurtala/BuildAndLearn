@@ -6,7 +6,7 @@ function App() {
     }
 
     function handleMouseHover() {
-        alert("Mouse Hovered!")
+        console.log("Mouse Hovered!")
     }
 
     return (
