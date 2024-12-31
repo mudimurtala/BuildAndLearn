@@ -4,11 +4,6 @@ function App() {
     function onClickFunc() {
         console.log("It is Clicked")
     }
-
-    function handleClick() {
-        alert("You Clicked Me!")
-    }
-
     return (
         <main className="container">
             <img 
@@ -16,9 +11,7 @@ function App() {
                 alt="Placeholder image for Picsum" 
             />
             <button onClick={onClickFunc}>Click me</button>
-            <button onClick={handleClick}>
-                I don't do anything
-            </button>
+            
         </main>
     )
 }
