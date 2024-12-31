@@ -15,7 +15,7 @@ function App() {
                 src="https://picsum.photos/640/360" 
                 alt="Placeholder image for Picsum" 
             />
-            <button onCli={onClickFunc}>Click me</button>
+            <button onClick={onClickFunc}>Click me</button>
             <button onClick={handleClick}>
                 I don't do anything
             </button>
