@@ -4,9 +4,15 @@ function App() {
     function onClickFunc() {
         console.log("It is Clicked")
     }
+
+    function handleMouseHover() {
+        console.log("Mouse Hovered!")
+    }
+
     return (
         <main className="container">
-            <img 
+            <img
+                onMouseOver={handleMouseHover}
                 src="https://picsum.photos/640/360" 
                 alt="Placeholder image for Picsum" 
             />
