@@ -24,10 +24,18 @@ body {
     filter: brightness(120%);
 }
 
-/* 
-.container > img:hover {
-    filter: brightness(120%);
+.container > button {
+    width: 100%;
+    border: 10px;
+    padding: 1rem;
+    border: 2px solid lightgray;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    fo
 }
+
+/* 
 
 .container > button {
     width: 100%;
