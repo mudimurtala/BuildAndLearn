@@ -2,7 +2,7 @@ export default function Main() {
 
     const ingredients = ["Chicken", "Oregano", "Tomatoes"]
     const ingo = ingredients.map((item) => {
-        return item
+        return <li>{item}</li>
     })
     
     /**
