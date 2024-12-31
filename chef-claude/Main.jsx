@@ -7,7 +7,7 @@ export default function Main() {
         </li>
     )
 
-    function onSubmit() {
+    function handleSubmit() {
         console.log("Form submitted!")
     }
     
@@ -19,13 +19,13 @@ export default function Main() {
 
     return (
         <main>
-            <form action="" className="add-ingredient-form">
+            <form onSubmit={handleSubmit} action="" className="add-ingredient-form">
                 <input 
                     type="text"
                     placeholder="e.g. oregano"
                     aria-label="Add ingredient"
                 />
-                <button onSubmit={onSubmit}>
+                <button>
                     Add ingredient
                 </button>
             </form>
