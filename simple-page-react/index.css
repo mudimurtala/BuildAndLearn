@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    outline: 2px solid;
 }
 
 body {
@@ -9,33 +8,62 @@ body {
     background-color: #262626;
     color: #D9D9D9;
     padding: 20px;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main {
+.container {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-main > .title {
-    text-align: center;
+.container > h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
 }
 
-main > .value {
-    background-color: white;
-    border: none;
+.counter {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+    margin-top: 40px;
+}
+
+.counter > button {
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: #737373;
+    color: #D9D9D9;
+    font-size: 1.5rem;
+}
+
+.counter > button:hover {
+    background-color: #404040;
+    color: #D9D9D9;
+}
+
+.count {
+    background-color: white;
     height: 100px;
     width: 100px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #262626;
+    margin-block: 0 10px;
     font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
+}
+
+.plus {
+    margin-left: -20px;
+}
+
+.minus {
+    margin-right: -20px;
+    z-index: 1;
 }
