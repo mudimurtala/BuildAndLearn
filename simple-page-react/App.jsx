@@ -11,6 +11,7 @@ export default function App() {
             <h1>How many times will Bob say "state" in this section?</h1>
             <div className="counter">
                 <button></button>
+                <h2></h2>
             </div>
         </main>
     )
