@@ -12,6 +12,7 @@ export default function App() {
             <div className="counter">
                 <button></button>
                 <h2></h2>
+                <button></button>
             </div>
         </main>
     )
