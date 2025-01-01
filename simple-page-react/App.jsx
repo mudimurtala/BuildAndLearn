@@ -7,7 +7,7 @@ export default function App() {
      * some state initiated with React.useState()
      */
 
-    const result = React.useState("Yes Always");
+    const result = React.useState("Yes");
     console.log(result)
     return (
         <main>
