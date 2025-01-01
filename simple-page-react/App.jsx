@@ -3,11 +3,8 @@ import React from "react"
 export default function App() {
     const [count, setCount] = React.useState(0)
     function add() {
-        setCount(function(prevCount) {
-            return prevCount + 1
-        })
+        setCount(prevCount => prevCount + 1)
     }
-
     function subtract() {
         setCount(() => count - 1)
     }
