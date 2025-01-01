@@ -10,9 +10,9 @@ export default function App() {
         <main className="container">
             <h1>How many times will Bob say "state" in this section?</h1>
             <div className="counter">
-                <button></button>
-                <h2></h2>
-                <button></button>
+                <button className="minus"></button>
+                <h2 className="count"></h2>
+                <button className="plus"></button>
             </div>
         </main>
     )
