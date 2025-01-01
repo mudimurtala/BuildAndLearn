@@ -9,7 +9,9 @@ export default function App() {
     return (
         <main className="container">
             <h1>How many times will Bob say "state" in this section?</h1>
-            <button className="value" onClick={handleClick}>{isImportant}</button>
+            <div className="counter">
+
+            </div>
         </main>
     )
 }
