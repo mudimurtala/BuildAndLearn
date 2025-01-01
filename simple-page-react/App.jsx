@@ -1,6 +1,11 @@
 import React from "react"
 
 export default function App() {
+    const [isResult, setIsResult] = React.useState(0)
+    function handleClick() {
+        setIsResult(prevResult => prevResult + 1);
+    }
+
     /**
      * Challenge: 
      * Create state to track our count value (initial value is 0)
@@ -10,9 +15,9 @@ export default function App() {
         <main className="container">
             <h1>How many times will Bob say "state" in this section?</h1>
             <div className="counter">
-                <button className="minus" aria-label="Decrease count">-</button>
-                <h2 className="count"></h2>
-                <button className="plus" aria-label="Increase count">+</button>
+                <button onClick={() => setIsResult(isResult - 1)} className="minus" aria-label="Decrease count">-</button>
+                <h2 className="count">{isResult}</h2>
+                <button onClick={handleClick} className="plus" aria-label="Increase count">+</button>
             </div>
         </main>
     )
