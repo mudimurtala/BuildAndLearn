@@ -1,20 +1,14 @@
 import React from "react"
 
 export default function App() {
-
-/**
-     * Challenge: Replace our hard-coded "Yes" on the page with 
-     * some state initiated with React.useState()
-     */
-
-    const [result, setResult] = React.useState("Yes");
+    const [isImportant, setIsImportant] = React.useState("Yes");
     function handleClick() {
-        setResult("So Yes")
+        setIsImportant("So Yes")
     }
     return (
         <main>
             <h1 className="title">Is state important to know?</h1>
-            <button className="value" onClick={handleClick}>{result}</button>
+            <button className="value" onClick={handleClick}>{isImportant}</button>
         </main>
     )
 }
