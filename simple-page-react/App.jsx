@@ -7,7 +7,7 @@ export default function App() {
     }
 
     function subtract() {
-        setIsResult(isResult - 1)
+        setIsResult(isResult -1)
     }
     return (
         <main className="container">
