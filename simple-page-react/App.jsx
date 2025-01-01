@@ -7,12 +7,14 @@ export default function App() {
      * some state initiated with React.useState()
      */
 
-    const result = React.useState("Yes");
-    console.log(result)
+    const [result, setResult] = React.useState("Yes");
+    function handleClick() {
+        setResult("So Yes")
+    }
     return (
         <main>
             <h1 className="title">Is state important to know?</h1>
-            <button className="value">{result[0]}</button>
+            <button className="value" onClick={handleClick}>{result}</button>
         </main>
     )
 }
