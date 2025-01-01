@@ -10,7 +10,7 @@ export default function App() {
         <main className="container">
             <h1>How many times will Bob say "state" in this section?</h1>
             <div className="counter">
-
+                <button></button>
             </div>
         </main>
     )
