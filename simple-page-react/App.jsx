@@ -8,15 +8,15 @@ export default function App() {
      *   boolean value (true -> false, false -> true)
      * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
      */
-    const isGoingOut = true
+    const [isGoingOut, setIsGoingOut] = React.useState(false)
     function handleClick() {
-        isGoingOut ? "Yes" : "No"
+        setIsGoingOut(prev => !prev)
     }
     
     return (
         <main>
             <h1 className="title">Do I feel like going out tonight?</h1>
-            <button onClick={handleClick} className="value">{isGoingOut}</button>
+            <button onClick={handleClick} className="value">{isGoingOut ? "Yes" : "No"}</button>
         </main>
     )
 }
