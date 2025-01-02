@@ -12,7 +12,7 @@ export default function App() {
     return (
         <main>
             <h1 className="title">Do I feel like going out tonight?</h1>
-            <button className="value"></button>
+            <button className="value">{answer}</button>
         </main>
     )
 }
