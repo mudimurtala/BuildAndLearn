@@ -16,7 +16,11 @@ export default function App() {
     return (
         <main>
             <h1 className="title">Do I feel like going out tonight?</h1>
-            <button onClick={handleClick} className="value">{isGoingOut ? "Yes" : "No"}</button>
+            <button 
+                onClick={handleClick}
+                aria-label={`Current answer is ${isGoingOut ? "Yes" : "No"}. Click to change it.`}
+                className="value"
+                >{isGoingOut ? "Yes" : "No"}</button>
         </main>
     )
 }
