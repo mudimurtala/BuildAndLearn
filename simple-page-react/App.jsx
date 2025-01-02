@@ -7,13 +7,13 @@ export default function App() {
      * 
      * Hint: you will no longer need the `answer` variable
      */
-    const isGoingOut = true
-    const answer = isGoingOut ? "Yes" : "No"
+    const isGoingOut = false
+    
     
     return (
         <main>
             <h1 className="title">Do I feel like going out tonight?</h1>
-            <button className="value">{answer}</button>
+            <button className="value">{isGoingOut ? "Yes" : "No"}</button>
         </main>
     )
 }
