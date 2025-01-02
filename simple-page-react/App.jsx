@@ -2,25 +2,27 @@ import React from "react"
 
 export default function App() {
     /**
-     * Challenge: 
-     * - Initialize state for `isGoingOut` as a boolean
-     * - Make it so clicking the button flips that
-     *   boolean value (true -> false, false -> true)
-     * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
+     * Challenge: Convert the code below to use an array
+     * held in state instead of a local variable. Initialize 
+     * the state array as an empty array
+     * 
+     * Don't worry about fixing `addFavoriteThing` quite yet.
      */
-    const [isGoingOut, setIsGoingOut] = React.useState(false)
-    function handleClick() {
-        setIsGoingOut(prev => !prev)
+    const myFavoriteThings = []
+    const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
+    "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+    const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+
+    function addFavoriteThing() {
+        // We'll work on this next, nothing to do here yet.
     }
     
     return (
         <main>
-            <h1 className="title">Do I feel like going out tonight?</h1>
-            <button 
-                onClick={handleClick}
-                aria-label={`Current answer is ${isGoingOut ? "Yes" : "No"}. Click to change it.`}
-                className="value"
-                >{isGoingOut ? "Yes" : "No"}</button>
+            <button onClick={addFavoriteThing}>Add item</button>
+            <section aria-live="polite">
+                {thingsElements}
+            </section>
         </main>
     )
 }
