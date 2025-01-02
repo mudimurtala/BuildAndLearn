@@ -7,7 +7,7 @@ export default function App() {
      */
     const isGoingOut = false
     
-    let answer = isGoingOut ? "Yes" : "No";
+    const answer = isGoingOut ? "Yes" : "No";
     
     return (
         <main>
