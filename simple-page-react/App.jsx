@@ -2,18 +2,21 @@ import React from "react"
 
 export default function App() {
     /**
-     * Challenge: move our ternary directly inside of the JSX
-     * so the "Yes" and "No" are determined inside the <h1>
-     * 
-     * Hint: you will no longer need the `answer` variable
+     * Challenge: 
+     * - Initialize state for `isGoingOut` as a boolean
+     * - Make it so clicking the button flips that
+     *   boolean value (true -> false, false -> true)
+     * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
      */
-    const isGoingOut = false
-    
+    const isGoingOut = true
+    function handleClick() {
+        isGoingOut ? "Yes" : "No"
+    }
     
     return (
         <main>
             <h1 className="title">Do I feel like going out tonight?</h1>
-            <button className="value">{isGoingOut ? "Yes" : "No"}</button>
+            <button onClick={handleClick} className="value">{isGoingOut}</button>
         </main>
     )
 }
