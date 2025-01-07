@@ -3,28 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dialog Example</title>
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="open-dialog">Open Dialog</button>
+    <header>
+        <h1>My Library</h1>
+        <button id="new-book-btn">New Book</button>
+    </header>
+    <main>
+        <div id="library"></div>
+    </main>
+    <dialog id="book-form-dialog">
+        <form id="book-form" action="">
+            <label for="">
+                Title:
+                <input type="text" id="title" required>
+            </label>
+            <label for="">
+                Author:
+                <input type="text" id="author" required>
+            </label>
+            <label for="">
+                Pages:
+                <input type="number" id="pages" required>
+            </label>
+            <label for="">
+                Read:
+                <input type="checkbox" id="read">
+            </label>
 
-    <dialog id="my-dialog">
-        <p>This is a dialog box!</p>
-        <button id="close-dialog">Close</button>
+            <button type="submit">Add Book</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+
+        </form>
     </dialog>
-
-    <script>
-        const dialog = document.getElementById('my-dialog');
-        const openButton = document.getElementById('open-dialog');
-        const closeButton = document.getElementById('close-dialog');
-
-        openButton.addEventListener('click', () => {
-            dialog.showModal();
-        });
-
-        closeButton.addEventListener('click', () => {
-            dialog.close();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
