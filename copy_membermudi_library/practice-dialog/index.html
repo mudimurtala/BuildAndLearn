@@ -27,50 +27,20 @@
     </style>
 </head>
 <body>
-    <button id="add-book">Add Book</button>
+    <button id="open-dialog">Open Dialog</button>
 
-  <dialog id="book-form-dialog">
-    <form id="book-form">
-      <label>
-        Title:
-        <input type="text" id="title" required>
-      </label>
-      <label>
-        Author:
-        <input type="text" id="author" required>
-      </label>
-      <label>
-        Pages:
-        <input type="number" id="pages" required>
-      </label>
-      <label>
-        Read:
-        <input type="checkbox" id="read">
-      </label>
-      <button type="submit">Add Book</button>
-      <button type="button" id="cancel-btn">Cancel</button>
-    </form>
-  </dialog>
+    <dialog id="my-dialog">
+        <p>This is a dialog box!</p>
+        <button id="close-dialog">Close</button>
+    </dialog>
 
-  <script>
-    const dialog = document.getElementById('book-form-dialog');
-    const addBookButton = document.getElementById('add-book');
-    const cancelButton = document.getElementById('cancel-btn');
-    const form = document.getElementById('book-form');
+    <script>
+        const dialog = document.getElementById("my-dialog");
+        const openButton = document.getElementById("open-dialog");
+        const closeButton = document.getElementById("close-dialog");
 
-    addBookButton.addEventListener('click', () => {
-      dialog.showModal();
-    });
-
-    cancelButton.addEventListener('click', () => {
-      dialog.close();
-    });
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      alert('Book added!');
-      dialog.close();
-    });
-  </script>
+       openButton.addEventListener("click", () => dialog.showModal());
+       closeButton.addEventListener("click", () => dialog.close());
+    </script>
 </body>
 </html>
