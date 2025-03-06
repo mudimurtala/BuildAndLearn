@@ -19,6 +19,6 @@ function calculatePrice(closingDate, visitDate, originalPrice) {
     return price;
 }
 
-console.log(calculatePrice('2025-04-01', '2025-05-03', 100));
+console.log(calculatePrice('2025-04-01', '2025-03-03', 100));
 console.log(calculatePrice('2025-04-01', '2025-03-15', 50));
 console.log(calculatePrice('2025-04-01', '2025-04-15', 75));
