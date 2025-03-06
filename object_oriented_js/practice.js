@@ -4,7 +4,7 @@ function calculatePrice(closingDate, visitDate, originalPrice) {
 
     if (visit > closing) {
         return originalPrice;
-    };
+    }
 
     let timeDifference = closing - visit;
     let daysDifference = timeDifference / (1000 * 60 * 60 * 24);
@@ -14,7 +14,7 @@ function calculatePrice(closingDate, visitDate, originalPrice) {
 
     for (let i = 0; i < weeksDifference; i++) {
         price *= 0.9;
-    };
+    }
 
     return price;
 }
