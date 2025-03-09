@@ -1,50 +1,43 @@
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
+import re
 
-# Function to find and save sentences with a keyword
-def find_and_save_sentences():
-    # Get the selected input file path from the GUI
-    input_file_path = filedialog.askopenfilename(filetypes=[("Text Files", "*.txt")])
-
-    # Get the keyword from the GUI entry widget
-    keyword = keyword_entry.get()
-
-    # Get the selected output file path from the GUI
-    output_file_path = filedialog.asksaveasfilename(filetypes=[("Text Files", "*.txt")])
-
-    # Ensure that all required fields are filled
-    if not input_file_path or not keyword or not output_file_path:
-        result_label.config(text="Please fill in all fields.")
+def extract_sentences():
+    input_file = filedialog.askopenfilename(title="Select Input File", filetypes=[("Text Files", "*.txt")])
+    if not input_file:
         return
-
+    
+    keyword = keyword_entry.get().strip()
+    if not keyword:
+        messagebox.showerror("Error", "Please enter a keyword.")
+        return
+    
+    output_file = filedialog.asksaveasfilename(title="Save Output File As", defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
+    if not output_file:
+        return
+    
     try:
-        with open(input_file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:
-            sentences = input_file.read().split('.')
-            for sentence in sentences:
-                if keyword in sentence:
-                    output_file.write(sentence + '.\n')
+        with open(input_file, "r", encoding="utf-8") as f:
+            text = f.read()
         
-        result_label.config(text="Sentences with the keyword saved successfully.")
+        sentences = re.split(r'(?<=[.!?])\s+', text)
+        matching_sentences = [s for s in sentences if keyword.lower() in s.lower()]
+        
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(matching_sentences))
+        
+        messagebox.showinfo("Success", "Sentences extracted and saved successfully.")
     except Exception as e:
-        result_label.config(text="An error occurred: " + str(e))
+        messagebox.showerror("Error", f"An error occurred: {e}")
 
-# Create the main window
+# Create GUI
 root = tk.Tk()
-root.title("Sentence Finder")
+root.title("Sentence Extractor")
 
-# Create and place GUI elements
-input_label = tk.Label(root, text="Select Input File:")
-input_label.pack()
-keyword_label = tk.Label(root, text="Enter Keyword:")
-keyword_label.pack()
-keyword_entry = tk.Entry(root)
-keyword_entry.pack()
-output_label = tk.Label(root, text="Select Output File:")
-output_label.pack()
-find_button = tk.Button(root, text="Find and Save Sentences", command=find_and_save_sentences)
-find_button.pack()
-result_label = tk.Label(root, text="")
-result_label.pack()
+tk.Label(root, text="Enter Keyword:").pack(pady=5)
+keyword_entry = tk.Entry(root, width=40)
+keyword_entry.pack(pady=5)
 
-# Start the GUI main loop
+tk.Button(root, text="Select Files & Extract", command=extract_sentences).pack(pady=10)
+
 root.mainloop()
