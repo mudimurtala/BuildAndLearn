@@ -1,37 +1,46 @@
 import tkinter as tk
-from tkinter import messagebox
 from datetime import datetime
 
+# Function to calculate the number of days between two dates
 def calculate_days():
+    date1_str = entry_date1.get()
+    date2_str = entry_date2.get()
+
     try:
-        date1_str = entry_date1.get()
-        date2_str = entry_date2.get()
-        
-        date1 = datetime.strptime(date1_str, "%m/%d/%Y")
-        date2 = datetime.strptime(date2_str, "%m/%d/%Y")
-        
-        days_diff = abs((date2 - date1).days)
-        messagebox.showinfo("Result", f"Number of days between: {days_diff}")
+        # Convert the input date strings to datetime objects
+        date1 = datetime.strptime(date1_str, '%m/%d/%Y')
+        date2 = datetime.strptime(date2_str, '%m/%d/%Y')
+
+        # Calculate the absolute difference in days between the two dates
+        delta = abs(date2 - date1)
+
+        # Update the result label with the number of days
+        result_label.config(text=f'Number of Days: {delta.days}')
     except ValueError:
-        messagebox.showerror("Error", "Please enter dates in MM/DD/YYYY format.")
+        result_label.config(text='Invalid date format. Use mm/dd/yyyy.')
 
-# Create GUI window
+# Create the main window
 root = tk.Tk()
-root.title("Date Difference Calculator")
-root.geometry("300x200")
+root.title('Date Calculator')
 
-# Labels and entry fields
-tk.Label(root, text="Enter first date (MM/DD/YYYY):").pack()
+# Create and place labels and entry fields for date input
+label_date1 = tk.Label(root, text='Enter Date 1 (mm/dd/yyyy):')
+label_date1.pack()
 entry_date1 = tk.Entry(root)
 entry_date1.pack()
 
-tk.Label(root, text="Enter second date (MM/DD/YYYY):").pack()
+label_date2 = tk.Label(root, text='Enter Date 2 (mm/dd/yyyy):')
+label_date2.pack()
 entry_date2 = tk.Entry(root)
 entry_date2.pack()
 
-# Calculate button
-calculate_button = tk.Button(root, text="Calculate", command=calculate_days)
+# Create a button to calculate the days between the dates
+calculate_button = tk.Button(root, text='Calculate', command=calculate_days)
 calculate_button.pack()
 
-# Run the application
+# Create a label to display the result
+result_label = tk.Label(root, text='')
+result_label.pack()
+
+# Start the GUI main loop
 root.mainloop()
