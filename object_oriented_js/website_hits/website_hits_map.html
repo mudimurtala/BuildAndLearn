@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a98043259444a9592c66a3131a4bb073 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a98043259444a9592c66a3131a4bb073" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a98043259444a9592c66a3131a4bb073 = L.map(
+                "map_a98043259444a9592c66a3131a4bb073",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_732c824e73a651a09cc6a45ecf0e1835 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_732c824e73a651a09cc6a45ecf0e1835.addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+            var marker_8eb816b09b64afa0bf8a9c90ed0b90df = L.marker(
+                [35.6768601, 139.7638947],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_4c4f52529d7de0f8e2daa48b690214fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d096c56f71dd0a4b9ae0a1a2f0fe1494 = $(`<div id="html_d096c56f71dd0a4b9ae0a1a2f0fe1494" style="width: 100.0%; height: 100.0%;">Tokyo, Japan: 362 hits</div>`)[0];
+                popup_4c4f52529d7de0f8e2daa48b690214fe.setContent(html_d096c56f71dd0a4b9ae0a1a2f0fe1494);
+            
+        
+
+        marker_8eb816b09b64afa0bf8a9c90ed0b90df.bindPopup(popup_4c4f52529d7de0f8e2daa48b690214fe)
+        ;
+
+        
+    
+    
+            marker_8eb816b09b64afa0bf8a9c90ed0b90df.bindTooltip(
+                `<div>
+                     Tokyo, Japan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c960f969c053a9d6656fda7cfe57aab9 = L.marker(
+                [31.2312707, 121.4700152],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_68545f2fcfd14cc999a148d72498bdbc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c367c3e6ab892b95a05084734351797 = $(`<div id="html_6c367c3e6ab892b95a05084734351797" style="width: 100.0%; height: 100.0%;">Shanghai, China: 4381 hits</div>`)[0];
+                popup_68545f2fcfd14cc999a148d72498bdbc.setContent(html_6c367c3e6ab892b95a05084734351797);
+            
+        
+
+        marker_c960f969c053a9d6656fda7cfe57aab9.bindPopup(popup_68545f2fcfd14cc999a148d72498bdbc)
+        ;
+
+        
+    
+    
+            marker_c960f969c053a9d6656fda7cfe57aab9.bindTooltip(
+                `<div>
+                     Shanghai, China
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e290feeb1fd1b74f956b4492bed71b2 = L.marker(
+                [40.190632, 116.412144],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_46186050f3331c06697db977b9d9c5fc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3239de109c119ee3c3836ff0a118a570 = $(`<div id="html_3239de109c119ee3c3836ff0a118a570" style="width: 100.0%; height: 100.0%;">Beijing, China: 910 hits</div>`)[0];
+                popup_46186050f3331c06697db977b9d9c5fc.setContent(html_3239de109c119ee3c3836ff0a118a570);
+            
+        
+
+        marker_1e290feeb1fd1b74f956b4492bed71b2.bindPopup(popup_46186050f3331c06697db977b9d9c5fc)
+        ;
+
+        
+    
+    
+            marker_1e290feeb1fd1b74f956b4492bed71b2.bindTooltip(
+                `<div>
+                     Beijing, China
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d4687c39c4db38cf4e1e8d3dc1c38cc5 = L.marker(
+                [37.5666791, 126.9782914],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_cce9b8aaa8f263c34bd4e030028a450a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ebfb7bb406aa5212c3cca5715592b83 = $(`<div id="html_5ebfb7bb406aa5212c3cca5715592b83" style="width: 100.0%; height: 100.0%;">Seoul, South Korea: 5623 hits</div>`)[0];
+                popup_cce9b8aaa8f263c34bd4e030028a450a.setContent(html_5ebfb7bb406aa5212c3cca5715592b83);
+            
+        
+
+        marker_d4687c39c4db38cf4e1e8d3dc1c38cc5.bindPopup(popup_cce9b8aaa8f263c34bd4e030028a450a)
+        ;
+
+        
+    
+    
+            marker_d4687c39c4db38cf4e1e8d3dc1c38cc5.bindTooltip(
+                `<div>
+                     Seoul, South Korea
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e542bf6509d6ef0eb95e4c2a5842ee4 = L.marker(
+                [13.7524938, 100.4935089],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_33339edfdeec570daa4598b073e5fae9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_162d114e3b002b61001819d9b1a2af6f = $(`<div id="html_162d114e3b002b61001819d9b1a2af6f" style="width: 100.0%; height: 100.0%;">Bangkok, Thailand: 789 hits</div>`)[0];
+                popup_33339edfdeec570daa4598b073e5fae9.setContent(html_162d114e3b002b61001819d9b1a2af6f);
+            
+        
+
+        marker_1e542bf6509d6ef0eb95e4c2a5842ee4.bindPopup(popup_33339edfdeec570daa4598b073e5fae9)
+        ;
+
+        
+    
+    
+            marker_1e542bf6509d6ef0eb95e4c2a5842ee4.bindTooltip(
+                `<div>
+                     Bangkok, Thailand
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2fd149855bea46ded111eae9ebca7b13 = L.marker(
+                [1.2899175, 103.8519072],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_5ea3612f1d7912d6a5d184633fafa4b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4da8c418e97c64681e8f130ab2acd885 = $(`<div id="html_4da8c418e97c64681e8f130ab2acd885" style="width: 100.0%; height: 100.0%;">Singapore, Singapore: 1003 hits</div>`)[0];
+                popup_5ea3612f1d7912d6a5d184633fafa4b6.setContent(html_4da8c418e97c64681e8f130ab2acd885);
+            
+        
+
+        marker_2fd149855bea46ded111eae9ebca7b13.bindPopup(popup_5ea3612f1d7912d6a5d184633fafa4b6)
+        ;
+
+        
+    
+    
+            marker_2fd149855bea46ded111eae9ebca7b13.bindTooltip(
+                `<div>
+                     Singapore, Singapore
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_89762d2c33ca1a0c2358ad41bb0b35b0 = L.marker(
+                [25.0375198, 121.5636796],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_5f55e3420a3f1cfc98c696b17b741af8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02fb02ac96ff91bac566d8c9cf52c0e6 = $(`<div id="html_02fb02ac96ff91bac566d8c9cf52c0e6" style="width: 100.0%; height: 100.0%;">Taipei, Taiwan: 2112 hits</div>`)[0];
+                popup_5f55e3420a3f1cfc98c696b17b741af8.setContent(html_02fb02ac96ff91bac566d8c9cf52c0e6);
+            
+        
+
+        marker_89762d2c33ca1a0c2358ad41bb0b35b0.bindPopup(popup_5f55e3420a3f1cfc98c696b17b741af8)
+        ;
+
+        
+    
+    
+            marker_89762d2c33ca1a0c2358ad41bb0b35b0.bindTooltip(
+                `<div>
+                     Taipei, Taiwan
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e6227cd260f6fe54d88c13f13918b1ab = L.marker(
+                [14.5904492, 120.9803621],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_165c85843f058ae855ba0ddabe77beb9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3fca1b2b352cf298d60361432b9f09d0 = $(`<div id="html_3fca1b2b352cf298d60361432b9f09d0" style="width: 100.0%; height: 100.0%;">Manila, Philippines: 867 hits</div>`)[0];
+                popup_165c85843f058ae855ba0ddabe77beb9.setContent(html_3fca1b2b352cf298d60361432b9f09d0);
+            
+        
+
+        marker_e6227cd260f6fe54d88c13f13918b1ab.bindPopup(popup_165c85843f058ae855ba0ddabe77beb9)
+        ;
+
+        
+    
+    
+            marker_e6227cd260f6fe54d88c13f13918b1ab.bindTooltip(
+                `<div>
+                     Manila, Philippines
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_25e20975a2c1e319878bdfffb2029926 = L.marker(
+                [-6.1754049, 106.827168],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_4f7968e7954d0c49bc44f65925789cfc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1badecfdbed1b5b190e229d57541ad61 = $(`<div id="html_1badecfdbed1b5b190e229d57541ad61" style="width: 100.0%; height: 100.0%;">Jakarta, Indonesia: 5309 hits</div>`)[0];
+                popup_4f7968e7954d0c49bc44f65925789cfc.setContent(html_1badecfdbed1b5b190e229d57541ad61);
+            
+        
+
+        marker_25e20975a2c1e319878bdfffb2029926.bindPopup(popup_4f7968e7954d0c49bc44f65925789cfc)
+        ;
+
+        
+    
+    
+            marker_25e20975a2c1e319878bdfffb2029926.bindTooltip(
+                `<div>
+                     Jakarta, Indonesia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1d70fd1e5089a3a77c11ce2023060049 = L.marker(
+                [21.0283334, 105.854041],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_0029705f715b7a0be16f1a564a44a716 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db299731b03b42efc9dd289f067d042e = $(`<div id="html_db299731b03b42efc9dd289f067d042e" style="width: 100.0%; height: 100.0%;">Hanoi, Vietnam: 165 hits</div>`)[0];
+                popup_0029705f715b7a0be16f1a564a44a716.setContent(html_db299731b03b42efc9dd289f067d042e);
+            
+        
+
+        marker_1d70fd1e5089a3a77c11ce2023060049.bindPopup(popup_0029705f715b7a0be16f1a564a44a716)
+        ;
+
+        
+    
+    
+            marker_1d70fd1e5089a3a77c11ce2023060049.bindTooltip(
+                `<div>
+                     Hanoi, Vietnam
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5db716a9e7499c47c8c7992e69c01f9a = L.marker(
+                [22.2793278, 114.1628131],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_450aaf6770156a6d9e7172633c4e0a77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b78552dde7e8ab6cbdbdcf2ccdf4c4a = $(`<div id="html_0b78552dde7e8ab6cbdbdcf2ccdf4c4a" style="width: 100.0%; height: 100.0%;">Hong Kong, Hong Kong: 1773 hits</div>`)[0];
+                popup_450aaf6770156a6d9e7172633c4e0a77.setContent(html_0b78552dde7e8ab6cbdbdcf2ccdf4c4a);
+            
+        
+
+        marker_5db716a9e7499c47c8c7992e69c01f9a.bindPopup(popup_450aaf6770156a6d9e7172633c4e0a77)
+        ;
+
+        
+    
+    
+            marker_5db716a9e7499c47c8c7992e69c01f9a.bindTooltip(
+                `<div>
+                     Hong Kong, Hong Kong
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a9c7062944c74d9c88bd4b12d4eca33 = L.marker(
+                [27.708317, 85.3205817],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_0a62c36b2d093619e8d0a3c5b8a43b57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_abdc648a88e10245b2b88ec7da666004 = $(`<div id="html_abdc648a88e10245b2b88ec7da666004" style="width: 100.0%; height: 100.0%;">Kathmandu, Nepal: 614 hits</div>`)[0];
+                popup_0a62c36b2d093619e8d0a3c5b8a43b57.setContent(html_abdc648a88e10245b2b88ec7da666004);
+            
+        
+
+        marker_0a9c7062944c74d9c88bd4b12d4eca33.bindPopup(popup_0a62c36b2d093619e8d0a3c5b8a43b57)
+        ;
+
+        
+    
+    
+            marker_0a9c7062944c74d9c88bd4b12d4eca33.bindTooltip(
+                `<div>
+                     Kathmandu, Nepal
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1a45fd572b9cee595783da09acbbc47 = L.marker(
+                [47.9184676, 106.9177016],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_9d4c3b429b305307b775b1ab9be04a34 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_beda7b401cdd4a939349afe3519a90d7 = $(`<div id="html_beda7b401cdd4a939349afe3519a90d7" style="width: 100.0%; height: 100.0%;">Ulaanbaatar, Mongolia: 933 hits</div>`)[0];
+                popup_9d4c3b429b305307b775b1ab9be04a34.setContent(html_beda7b401cdd4a939349afe3519a90d7);
+            
+        
+
+        marker_a1a45fd572b9cee595783da09acbbc47.bindPopup(popup_9d4c3b429b305307b775b1ab9be04a34)
+        ;
+
+        
+    
+    
+            marker_a1a45fd572b9cee595783da09acbbc47.bindTooltip(
+                `<div>
+                     Ulaanbaatar, Mongolia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f71297e51909985b06d08f6f05c850a7 = L.marker(
+                [17.9640988, 102.6133707],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_433364a8e480551a71a6cf05812f2562 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6bdecd35c3d04035f4ef6979d3cf2ae3 = $(`<div id="html_6bdecd35c3d04035f4ef6979d3cf2ae3" style="width: 100.0%; height: 100.0%;">Vientiane, Laos: 1004 hits</div>`)[0];
+                popup_433364a8e480551a71a6cf05812f2562.setContent(html_6bdecd35c3d04035f4ef6979d3cf2ae3);
+            
+        
+
+        marker_f71297e51909985b06d08f6f05c850a7.bindPopup(popup_433364a8e480551a71a6cf05812f2562)
+        ;
+
+        
+    
+    
+            marker_f71297e51909985b06d08f6f05c850a7.bindTooltip(
+                `<div>
+                     Vientiane, Laos
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6cb3809d5e502b6bed595c9e8421b1d3 = L.marker(
+                [11.5730391, 104.857807],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_c7c1d6351ba48fc52e98457e8cfec583 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_560c817c52a9942e726d123b1f795fb6 = $(`<div id="html_560c817c52a9942e726d123b1f795fb6" style="width: 100.0%; height: 100.0%;">Phnom Penh, Cambodia: 2805 hits</div>`)[0];
+                popup_c7c1d6351ba48fc52e98457e8cfec583.setContent(html_560c817c52a9942e726d123b1f795fb6);
+            
+        
+
+        marker_6cb3809d5e502b6bed595c9e8421b1d3.bindPopup(popup_c7c1d6351ba48fc52e98457e8cfec583)
+        ;
+
+        
+    
+    
+            marker_6cb3809d5e502b6bed595c9e8421b1d3.bindTooltip(
+                `<div>
+                     Phnom Penh, Cambodia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0b8c4a2238d483272b810d31b1e4d16 = L.marker(
+                [19.7753289, 96.1032552],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_e9d4f89478bf73024eac8bc5d343426a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2fd315c50bcaec53934e0d16abdf1747 = $(`<div id="html_2fd315c50bcaec53934e0d16abdf1747" style="width: 100.0%; height: 100.0%;">Naypyidaw, Myanmar: 230 hits</div>`)[0];
+                popup_e9d4f89478bf73024eac8bc5d343426a.setContent(html_2fd315c50bcaec53934e0d16abdf1747);
+            
+        
+
+        marker_f0b8c4a2238d483272b810d31b1e4d16.bindPopup(popup_e9d4f89478bf73024eac8bc5d343426a)
+        ;
+
+        
+    
+    
+            marker_f0b8c4a2238d483272b810d31b1e4d16.bindTooltip(
+                `<div>
+                     Naypyidaw, Myanmar
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_18414cdd191daa90dfe5fbc2f52f2016 = L.marker(
+                [-8.5536809, 125.5784093],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_25b5c409b392297384a58d1dd7b91925 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_368b1eb8f29ab086812ea163562e25dc = $(`<div id="html_368b1eb8f29ab086812ea163562e25dc" style="width: 100.0%; height: 100.0%;">Dili, Timor-Leste: 893 hits</div>`)[0];
+                popup_25b5c409b392297384a58d1dd7b91925.setContent(html_368b1eb8f29ab086812ea163562e25dc);
+            
+        
+
+        marker_18414cdd191daa90dfe5fbc2f52f2016.bindPopup(popup_25b5c409b392297384a58d1dd7b91925)
+        ;
+
+        
+    
+    
+            marker_18414cdd191daa90dfe5fbc2f52f2016.bindTooltip(
+                `<div>
+                     Dili, Timor-Leste
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e0b64f0b97e598a6241ab062b00889eb = L.marker(
+                [4.8895453, 114.9417574],
+                {}
+            ).addTo(map_a98043259444a9592c66a3131a4bb073);
+        
+    
+        var popup_fe314d41ef3957cfaf3ac89e8c6e1141 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_52a1cadac17cbf9aedd6a3c591c83778 = $(`<div id="html_52a1cadac17cbf9aedd6a3c591c83778" style="width: 100.0%; height: 100.0%;">Bandar Seri Begawan, Brunei: 645 hits</div>`)[0];
+                popup_fe314d41ef3957cfaf3ac89e8c6e1141.setContent(html_52a1cadac17cbf9aedd6a3c591c83778);
+            
+        
+
+        marker_e0b64f0b97e598a6241ab062b00889eb.bindPopup(popup_fe314d41ef3957cfaf3ac89e8c6e1141)
+        ;
+
+        
+    
+    
+            marker_e0b64f0b97e598a6241ab062b00889eb.bindTooltip(
+                `<div>
+                     Bandar Seri Begawan, Brunei
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
