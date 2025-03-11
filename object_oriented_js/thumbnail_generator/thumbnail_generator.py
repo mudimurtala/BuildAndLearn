@@ -1,7 +1,7 @@
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
-from PIL import Image
+from PIL import Image # type: ignore
 
 def create_thumbnails(input_dir, output_dir):
     if not os.path.exists(output_dir):
