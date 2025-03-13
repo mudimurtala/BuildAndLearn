@@ -4,7 +4,7 @@ graph = {}
 # Read the airfare data from a file and populate the graph.
 with open('airfares.txt', 'r') as file:
     for line in file:
-        origin, destination, airfare = line.strip().split(' | ')
+        origin, destination, airfare = map(str.strip, line.split(' | '))  # Strip leading/trailing spaces
         airfare = float(airfare)
         
         if origin not in graph:
