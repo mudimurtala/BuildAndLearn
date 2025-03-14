@@ -51,10 +51,12 @@ def main():
                     for title in section_titles:
                         section_title = title.text
                         if contains_keywords(section_title, keywords):
-                            # Write the brand name and section text to strategies.txt
+                            # Find the parent element of the title and extract the text
+                            section_text = title.find_parent().find_next('p').text.strip()
+                            # Write the brand name, section title, and section text to strategies.txt
                             strategies_file.write(f"Brand Name: {brand_name}\n")
                             strategies_file.write(f"Section Title: {section_title}\n")
-                            strategies_file.write(f"Section Text: {title.parent.text}\n\n")
+                            strategies_file.write(f"Section Text: {section_text}\n\n")
 
 if __name__ == "__main__":
     main()
