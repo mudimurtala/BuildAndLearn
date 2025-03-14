@@ -37,6 +37,8 @@ def tsp_dp(city, visited_cities):
 
 # Rest of the code remains the same...
 
+# Rest of the code...
+
 # Main function to find the optimal tour.
 def find_optimal_tour(start_city):
     visited_cities = set([start_city])
@@ -49,11 +51,14 @@ start_city = input("Enter the city you're starting in: ")
 if start_city in graph:
     optimal_tour = find_optimal_tour(start_city)
 
-    # Print the optimal tour and total cost.
-    total_cost = sum(cost for _, cost in optimal_tour)
-    print("Optimal Tour:")
-    for city, cost in optimal_tour:
-        print(f"City: {city}, Cost: ${cost:.2f}")
-    print(f"Total Cost: ${total_cost:.2f}")
+    if optimal_tour is not None:  # Check if optimal_tour is None
+        # Print the optimal tour and total cost.
+        total_cost = sum(cost for _, cost in optimal_tour)
+        print("Optimal Tour:")
+        for city, cost in optimal_tour:
+            print(f"City: {city}, Cost: ${cost:.2f}")
+        print(f"Total Cost: ${total_cost:.2f}")
+    else:
+        print("No valid tour found.")
 else:
     print("City not found in the data.")
