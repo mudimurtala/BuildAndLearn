@@ -14,7 +14,7 @@ def get_marketing_sections(brand):
         if "advertising" in section.title.lower() or "marketing" in section.title.lower():
             sections_to_save.append((brand, section.title, section.text))
 
-    return sections_to_save
+    return sections_to_save if sections_to_save else None  # Return None if no sections found
 
 def main():
     input_file = "coffees.txt"
@@ -31,7 +31,9 @@ def main():
                     file.write(f"Brand: {brand_name}\n")
                     file.write(f"Section: {title}\n")
                     file.write(text + "\n\n")
-                    print(f"Saved marketing info for {brand_name}")
+                print(f"Saved marketing info for {brand_name}")
+            else:
+                print(f"⚠️ No marketing info found for {brand_name}")  # Prints warning
 
 if __name__ == "__main__":
     main()
