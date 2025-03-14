@@ -3,13 +3,31 @@ import wikipediaapi
 # Create a Wikipedia API object with user-agent and language
 wiki_wiki = wikipediaapi.Wikipedia(user_agent="FindSections/1.0", language="en")
 
-# Function to check if a page has a section containing specific keywords
-def has_keywords_section(page, keywords):
-    for section in page.sections:
-        section_title = section.title.lower()
-        for keyword in keywords:
-            if keyword in section_title:
-                return True, section.text
+# Function to check if a section title contains specific keywords
+def contains_keywords(section_title, keywords):
+    section_title = section_title.lower()
+    for keyword in keywords:
+        if keyword in section_title:
+            return True
+    return False
+
+# Function to extract text from a section and its subsections
+def extract_section_text(section):
+    section_text = section.text
+    for subsect in section.sections:
+        section_text += extract_section_text(subsect)
+    return section_text
+
+# Function to check if a section or its subsections contains specific keywords
+def has_keywords_section(section, keywords):
+    if contains_keywords(section.title, keywords):
+        return True, extract_section_text(section)
+    
+    for subsect in section.sections:
+        has_keywords, subsect_text = has_keywords_section(subsect, keywords)
+        if has_keywords:
+            return True, subsect_text
+    
     return False, None
 
 # Main function
@@ -28,7 +46,7 @@ def main():
                 # Retrieve the Wikipedia page for the brand
                 page = wiki_wiki.page(brand_name)
 
-                # Check if the page has a section with the keywords
+                # Check if the page or its subsections have sections with the keywords
                 has_keywords, section_text = has_keywords_section(page, keywords)
 
                 if has_keywords:
@@ -39,4 +57,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
