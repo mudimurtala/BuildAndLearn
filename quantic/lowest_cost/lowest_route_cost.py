@@ -25,13 +25,17 @@ def tsp_dp(city, visited_cities):
             new_visited = visited_cities.copy()
             new_visited.add(neighbor)
             path = tsp_dp(neighbor, new_visited)
-            total_cost = cost + path[0][1]
+            
+            if path is not None:  # Check for None here
+                total_cost = cost + path[0][1]
 
-            if total_cost < min_cost:
-                min_cost = total_cost
-                min_path = [(city, cost)] + path
+                if total_cost < min_cost:
+                    min_cost = total_cost
+                    min_path = [(city, cost)] + path
 
     return min_path
+
+# Rest of the code remains the same...
 
 # Main function to find the optimal tour.
 def find_optimal_tour(start_city):
