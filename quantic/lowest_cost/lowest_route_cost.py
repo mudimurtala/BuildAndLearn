@@ -1,3 +1,5 @@
+import itertools
+
 # Define the graph as a dictionary where keys are cities and values are lists of (destination, airfare) tuples.
 graph = {}
 
@@ -6,59 +8,49 @@ with open('airfares.txt', 'r') as file:
     for line in file:
         origin, destination, airfare = map(str.strip, line.split(' | '))  # Strip leading/trailing spaces
         airfare = float(airfare)
-        
+
         if origin not in graph:
             graph[origin] = []
         graph[origin].append((destination, airfare))
 
-# Function to find the optimal tour using TSP with memoization.
-def tsp_dp(city, visited_cities):
-    if not visited_cities:
-        return [(city, 0)]
+# Function to calculate the total cost of a path.
+def calculate_path_cost(path):
+    total_cost = 0.0
+    for i in range(len(path) - 1):
+        origin, destination = path[i], path[i + 1]
+        for dest, cost in graph[origin]:
+            if dest == destination:
+                total_cost += cost
+                break
+    return total_cost
 
-    # Calculate the minimum cost and sequence of cities.
-    min_cost = float('inf')
-    min_path = None
-
-    for neighbor, cost in graph[city]:
-        if neighbor not in visited_cities:
-            new_visited = visited_cities.copy()
-            new_visited.add(neighbor)
-            path = tsp_dp(neighbor, new_visited)
-            
-            if path is not None:  # Check for None here
-                total_cost = cost + path[0][1]
-
-                if total_cost < min_cost:
-                    min_cost = total_cost
-                    min_path = [(city, cost)] + path
-
-    return min_path
-
-# Rest of the code remains the same...
-
-# Rest of the code...
-
-# Main function to find the optimal tour.
+# Function to find the optimal tour using itertools.permutations.
 def find_optimal_tour(start_city):
-    visited_cities = set([start_city])
-    tour = tsp_dp(start_city, visited_cities)
-    return tour
+    all_cities = list(graph.keys())
+    all_cities.remove(start_city)
+    optimal_tour = None
+    min_cost = float('inf')
+
+    for permuted_cities in itertools.permutations(all_cities):
+        tour = [start_city] + list(permuted_cities) + [start_city]
+        tour_cost = calculate_path_cost(tour)
+
+        if tour_cost < min_cost:
+            min_cost = tour_cost
+            optimal_tour = tour
+
+    return optimal_tour, min_cost
 
 # Get user input for the starting city.
 start_city = input("Enter the city you're starting in: ")
 
 if start_city in graph:
-    optimal_tour = find_optimal_tour(start_city)
+    optimal_tour, total_cost = find_optimal_tour(start_city)
 
-    if optimal_tour is not None:  # Check if optimal_tour is None
-        # Print the optimal tour and total cost.
-        total_cost = sum(cost for _, cost in optimal_tour)
-        print("Optimal Tour:")
-        for city, cost in optimal_tour:
-            print(f"City: {city}, Cost: ${cost:.2f}")
-        print(f"Total Cost: ${total_cost:.2f}")
-    else:
-        print("No valid tour found.")
+    # Print the optimal tour and total cost.
+    print("Optimal Tour:")
+    for city in optimal_tour:
+        print(f"City: {city}")
+    print(f"Total Cost: ${total_cost:.2f}")
 else:
     print("City not found in the data.")
