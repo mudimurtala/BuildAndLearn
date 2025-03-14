@@ -2,7 +2,7 @@ import wikipediaapi
 
 def get_marketing_sections(brand):
     """Fetches Wikipedia page and extracts sections with 'advertising' or 'marketing'."""
-    wiki_wiki = wikipediaapi.Wikipedia("en")
+    wiki_wiki = wikipediaapi.Wikipedia(user_agent="ibnmuhyideen95@gmail.com", language="en")
     page = wiki_wiki.page(brand)
 
     if not page.exists():
