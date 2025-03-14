@@ -1,28 +1,16 @@
-import os
-import requests
-from bs4 import BeautifulSoup
+import wikipediaapi
 
-# Function to retrieve Wikipedia page content
-def get_wikipedia_page(brand_name):
-    # Construct the URL for the Wikipedia page
-    url = f"https://en.wikipedia.org/wiki/{brand_name}"
+# Create a Wikipedia API object
+wiki_wiki = wikipediaapi.Wikipedia('en')
 
-    # Send an HTTP GET request to the URL
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        return response.text
-    else:
-        return None
-
-# Function to check if a section title contains specific words
-def contains_keywords(section_title, keywords):
-    section_title = section_title.lower()
-    for keyword in keywords:
-        if keyword in section_title:
-            return True
-    return False
+# Function to check if a page has a section containing specific keywords
+def has_keywords_section(page, keywords):
+    for section in page.sections:
+        section_title = section.title.lower()
+        for keyword in keywords:
+            if keyword in section_title:
+                return True, section.text
+    return False, None
 
 # Main function
 def main():
@@ -37,26 +25,17 @@ def main():
             for brand_name in coffees_file:
                 brand_name = brand_name.strip()  # Remove leading/trailing whitespace
 
-                # Retrieve the Wikipedia page content
-                page_content = get_wikipedia_page(brand_name)
+                # Retrieve the Wikipedia page for the brand
+                page = wiki_wiki.page(brand_name)
 
-                if page_content:
-                    # Parse the HTML content using BeautifulSoup
-                    soup = BeautifulSoup(page_content, "html.parser")
+                # Check if the page has a section with the keywords
+                has_keywords, section_text = has_keywords_section(page, keywords)
 
-                    # Find all section titles (usually enclosed in <span> tags with class "mw-headline")
-                    section_titles = soup.find_all("span", class_="mw-headline")
-
-                    # Iterate through section titles and check for keywords
-                    for title in section_titles:
-                        section_title = title.text
-                        if contains_keywords(section_title, keywords):
-                            # Find the parent element of the title and extract the text
-                            section_text = title.find_parent().find_next('p').text.strip()
-                            # Write the brand name, section title, and section text to strategies.txt
-                            strategies_file.write(f"Brand Name: {brand_name}\n")
-                            strategies_file.write(f"Section Title: {section_title}\n")
-                            strategies_file.write(f"Section Text: {section_text}\n\n")
+                if has_keywords:
+                    # Write the brand name, section title, and section text to strategies.txt
+                    strategies_file.write(f"Brand Name: {brand_name}\n")
+                    strategies_file.write(f"Section Title: {keywords}\n")
+                    strategies_file.write(f"Section Text:\n{section_text}\n\n")
 
 if __name__ == "__main__":
     main()
