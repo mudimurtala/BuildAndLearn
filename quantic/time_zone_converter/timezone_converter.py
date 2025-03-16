@@ -1,8 +1,13 @@
 import pytz
 from datetime import datetime
 
+
 def convert_timezone(input_time, from_timezone, to_timezone):
     try:
+        # Check if input_time is a valid datetime object
+        if not isinstance(input_time, datetime):
+            raise ValueError("Invalid input time")
+
         # Create a datetime object from the input time in the 'from_timezone'
         from_timezone_obj = pytz.timezone(from_timezone)
         input_time = from_timezone_obj.localize(input_time)
@@ -15,6 +20,9 @@ def convert_timezone(input_time, from_timezone, to_timezone):
 
     except pytz.exceptions.UnknownTimeZoneError:
         return "Invalid time zone provided"
+    except ValueError as e:
+        return str(e)
+
 
 # Example usage:
 if __name__ == "__main__":
