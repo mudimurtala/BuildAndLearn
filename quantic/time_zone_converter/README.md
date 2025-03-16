@@ -8,3 +8,5 @@
 
 4 - Using these test cases, write a program that tests the convert_timezone function.
 
+5 - Wrap the convert_timezone function in a GUI. The GUI should accept the following user inputs: the date and time to convert, the time zone to convert from, and the time zone to convert to. The time zones should be in a combobox control. There should be a button labeled "Convert" that causes the convert_timezone function to be called with the user inputs and the converted date and time to be displayed as an output on the GUI.
+
