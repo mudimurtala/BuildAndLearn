@@ -47,6 +47,34 @@ class TestConvertTimezone(unittest.TestCase):
         result = result.replace(tzinfo=None)
         self.assertEqual(result, expected_output)
 
+    def test_conversion_to_invalid_timezone(self):
+        input_time = datetime(2023, 9, 18, 12, 0, 0)
+        from_timezone = 'UTC'
+        to_timezone = 'Invalid/Nonexistent'
+        expected_output = "Invalid time zone provided"
+        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
+
+    def test_conversion_with_erroneous_input_time(self):
+        input_time = "Invalid Datetime Format"
+        from_timezone = 'UTC'
+        to_timezone = 'US/Pacific'
+        expected_output = "Invalid input time"
+        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
+
+    def test_conversion_with_erroneous_source_timezone(self):
+        input_time = datetime(2023, 9, 18, 12, 0, 0)
+        from_timezone = 'Invalid/Nonexistent'
+        to_timezone = 'US/Pacific'
+        expected_output = "Invalid time zone provided"
+        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
+
+    def test_conversion_with_erroneous_target_timezone(self):
+        input_time = datetime(2023, 9, 18, 12, 0, 0)
+        from_timezone = 'UTC'
+        to_timezone = 'Invalid/Nonexistent'
+        expected_output = "Invalid time zone provided"
+        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
+
     def test_conversion_with_different_date(self):
         input_time = datetime(2023, 12, 25, 12, 0, 0)
         from_timezone = 'UTC'
@@ -57,7 +85,6 @@ class TestConvertTimezone(unittest.TestCase):
         result = result.replace(tzinfo=None)
         self.assertEqual(result, expected_output)
 
-    # (Other test cases remain the same)
 
 if __name__ == '__main__':
     unittest.main()
