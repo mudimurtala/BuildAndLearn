@@ -1,38 +1,31 @@
-import pytz
 from datetime import datetime
+import pytz
 
+def convert_time_zone(time_to_convert, from_tz, to_tz):
+    """
+    Convert a datetime from one time zone to another.
 
-def convert_timezone(input_time, from_timezone, to_timezone):
-    try:
-        # Check if input_time is a valid datetime object
-        if not isinstance(input_time, datetime):
-            raise ValueError("Invalid input time")
-
-        # Create a datetime object from the input time in the 'from_timezone'
-        from_timezone_obj = pytz.timezone(from_timezone)
-        input_time = from_timezone_obj.localize(input_time)
-
-        # Convert the datetime object to the 'to_timezone'
-        to_timezone_obj = pytz.timezone(to_timezone)
-        converted_time = input_time.astimezone(to_timezone_obj)
-
-        return converted_time
-
-    except pytz.exceptions.UnknownTimeZoneError:
-        return "Invalid time zone provided"
-    except ValueError as e:
-        return str(e)
-
-
-# Example usage:
-if __name__ == "__main__":
-    # Input time in 'from_timezone' (UTC)
-    input_time = datetime(2023, 9, 18, 12, 0, 0)  # Replace with your desired time
-
-    # Convert from UTC to US/Pacific time zone
-    from_timezone = 'UTC'
-    to_timezone = 'US/Pacific'
-
-    converted_time = convert_timezone(input_time, from_timezone, to_timezone)
-    print(f"Converted time: {converted_time}")
+    :param time_to_convert: The datetime object to convert.
+    :param from_tz: The source time zone as a string (e.g., 'UTC', 'America/New_York').
+    :param to_tz: The target time zone as a string.
+    :return: The converted datetime object.
+    """
+    # Define the source and target time zones
+    from_zone = pytz.timezone(from_tz)
+    to_zone = pytz.timezone(to_tz)
     
+    # Localize the input datetime to the source time zone
+    localized_time = from_zone.localize(time_to_convert)
+    
+    # Convert to the target time zone
+    converted_time = localized_time.astimezone(to_zone)
+    
+    return converted_time
+
+# Example usage
+time_now = datetime(2025, 3, 17, 4, 0)  # 12:00 PM (noon) on March 17, 2025
+from_timezone = 'UTC'
+to_timezone = 'Africa/Lagos'
+
+converted = convert_time_zone(time_now, from_timezone, to_timezone)
+print("Converted Time:", converted)
