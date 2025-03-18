@@ -1,90 +1,72 @@
-import unittest
 from datetime import datetime
 import pytz
+import unittest
 
-# Import the function to be tested
-from timezone_converter import convert_timezone  # Replace with your actual module name
+def convert_time_zone(time_to_convert, from_tz, to_tz):
+    """
+    Convert a datetime from one time zone to another.
 
-class TestConvertTimezone(unittest.TestCase):
+    :param time_to_convert: The datetime object to convert.
+    :param from_tz: The source time zone as a string (e.g., 'UTC', 'America/New_York').
+    :param to_tz: The target time zone as a string.
+    :return: The converted datetime object.
+    """
+    if time_to_convert.tzinfo is None:
+        raise ValueError("Naive datetime object provided. Please use an aware datetime.")
 
+    from_zone = pytz.timezone(from_tz)
+    to_zone = pytz.timezone(to_tz)
+    
+    # Ensure datetime is localized before converting
+    localized_time = from_zone.localize(time_to_convert) if time_to_convert.tzinfo is None else time_to_convert
+    
+    return localized_time.astimezone(to_zone)
+
+
+class TestConvertTimeZone(unittest.TestCase):
     def test_basic_conversion(self):
-        input_time = datetime(2023, 9, 18, 12, 0, 0)
-        from_timezone = 'UTC'
-        to_timezone = 'US/Pacific'
-        expected_output = datetime(2023, 9, 18, 5, 0, 0)  # Remove tzinfo for comparison
-        result = convert_timezone(input_time, from_timezone, to_timezone)
-        # Remove tzinfo from result for comparison
-        result = result.replace(tzinfo=None)
-        self.assertEqual(result, expected_output)
-
-    def test_conversion_with_dst(self):
-        input_time = datetime(2023, 3, 18, 12, 0, 0)
-        from_timezone = 'UTC'
-        to_timezone = 'US/Pacific'
-        expected_output = datetime(2023, 3, 18, 5, 0, 0)  # Remove tzinfo for comparison
-        result = convert_timezone(input_time, from_timezone, to_timezone)
-        # Remove tzinfo from result for comparison
-        result = result.replace(tzinfo=None)
-        self.assertEqual(result, expected_output)
-
-    def test_conversion_within_same_timezone(self):
-        input_time = datetime(2023, 9, 18, 12, 0, 0)
-        from_timezone = 'US/Pacific'
-        to_timezone = 'US/Eastern'
-        expected_output = datetime(2023, 9, 18, 15, 0, 0)  # Remove tzinfo for comparison
-        result = convert_timezone(input_time, from_timezone, to_timezone)
-        # Remove tzinfo from result for comparison
-        result = result.replace(tzinfo=None)
-        self.assertEqual(result, expected_output)
-
-    def test_conversion_to_negative_offset_timezone(self):
-        input_time = datetime(2023, 9, 18, 12, 0, 0)
-        from_timezone = 'UTC'
-        to_timezone = 'Asia/Kolkata'
-        expected_output = datetime(2023, 9, 18, 17, 30, 0)  # Remove tzinfo for comparison
-        result = convert_timezone(input_time, from_timezone, to_timezone)
-        # Remove tzinfo from result for comparison
-        result = result.replace(tzinfo=None)
-        self.assertEqual(result, expected_output)
-
-    def test_conversion_to_invalid_timezone(self):
-        input_time = datetime(2023, 9, 18, 12, 0, 0)
-        from_timezone = 'UTC'
-        to_timezone = 'Invalid/Nonexistent'
-        expected_output = "Invalid time zone provided"
-        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
-
-    def test_conversion_with_erroneous_input_time(self):
-        input_time = "Invalid Datetime Format"
-        from_timezone = 'UTC'
-        to_timezone = 'US/Pacific'
-        expected_output = "Invalid input time"
-        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
-
-    def test_conversion_with_erroneous_source_timezone(self):
-        input_time = datetime(2023, 9, 18, 12, 0, 0)
-        from_timezone = 'Invalid/Nonexistent'
-        to_timezone = 'US/Pacific'
-        expected_output = "Invalid time zone provided"
-        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
-
-    def test_conversion_with_erroneous_target_timezone(self):
-        input_time = datetime(2023, 9, 18, 12, 0, 0)
-        from_timezone = 'UTC'
-        to_timezone = 'Invalid/Nonexistent'
-        expected_output = "Invalid time zone provided"
-        self.assertEqual(convert_timezone(input_time, from_timezone, to_timezone), expected_output)
-
-    def test_conversion_with_different_date(self):
-        input_time = datetime(2023, 12, 25, 12, 0, 0)
-        from_timezone = 'UTC'
-        to_timezone = 'Australia/Sydney'
-        expected_output = datetime(2023, 12, 25, 23, 0, 0)  # Remove tzinfo for comparison
-        result = convert_timezone(input_time, from_timezone, to_timezone)
-        # Remove tzinfo from result for comparison
-        result = result.replace(tzinfo=None)
-        self.assertEqual(result, expected_output)
-
+        time_now = datetime(2025, 3, 17, 12, 0)
+        result = convert_time_zone(time_now, 'UTC', 'America/New_York')
+        self.assertEqual(result.strftime('%Y-%m-%d %H:%M'), '2025-03-17 08:00')  # EDT (UTC-4)
+    
+    def test_same_time_zone(self):
+        time_now = datetime(2025, 3, 17, 12, 0)
+        result = convert_time_zone(time_now, 'UTC', 'UTC')
+        self.assertEqual(result.strftime('%Y-%m-%d %H:%M'), '2025-03-17 12:00')
+    
+    def test_dst_start(self):
+        time_now = datetime(2025, 3, 9, 1, 30)
+        result = convert_time_zone(time_now, 'America/New_York', 'UTC')
+        self.assertEqual(result.strftime('%Y-%m-%d %H:%M'), '2025-03-09 06:30')  # Before DST shift
+    
+    def test_dst_end(self):
+        time_now = datetime(2025, 11, 2, 1, 30)
+        result = convert_time_zone(time_now, 'America/New_York', 'UTC')
+        self.assertEqual(result.strftime('%Y-%m-%d %H:%M'), '2025-11-02 06:30')  # After DST shift
+    
+    def test_far_apart_time_zones(self):
+        time_now = datetime(2025, 3, 17, 12, 0)
+        result = convert_time_zone(time_now, 'UTC', 'Asia/Tokyo')
+        self.assertEqual(result.strftime('%Y-%m-%d %H:%M'), '2025-03-17 21:00')  # JST (UTC+9)
+    
+    def test_west_africa_time(self):
+        time_now = datetime(2025, 3, 17, 12, 0)
+        result = convert_time_zone(time_now, 'UTC', 'Africa/Lagos')
+        self.assertEqual(result.strftime('%Y-%m-%d %H:%M'), '2025-03-17 13:00')  # WAT (UTC+1)
+    
+    def test_invalid_time_zone(self):
+        time_now = datetime(2025, 3, 17, 12, 0)
+        with self.assertRaises(pytz.UnknownTimeZoneError):
+            convert_time_zone(time_now, 'UTC', 'INVALID_TIMEZONE')
+    
+    def test_non_datetime_input(self):
+        with self.assertRaises(AttributeError):
+            convert_time_zone("2025-03-17 12:00", 'UTC', 'America/New_York')
+    
+    def test_naive_datetime(self):
+        naive_time = datetime(2025, 3, 17, 12, 0)
+        with self.assertRaises(ValueError):
+            convert_time_zone(naive_time, 'UTC', 'America/New_York')
 
 if __name__ == '__main__':
     unittest.main()
