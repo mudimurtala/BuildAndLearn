@@ -21,11 +21,3 @@ def convert_time_zone(time_to_convert, from_tz, to_tz):
     converted_time = localized_time.astimezone(to_zone)
     
     return converted_time
-
-# Example usage
-time_now = datetime(2025, 3, 17, 4, 0)  # 12:00 PM (noon) on March 17, 2025
-from_timezone = 'UTC'
-to_timezone = 'Africa/Lagos'
-
-converted = convert_time_zone(time_now, from_timezone, to_timezone)
-print("Converted Time:", converted)
