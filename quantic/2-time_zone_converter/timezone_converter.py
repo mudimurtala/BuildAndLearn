@@ -1,23 +1,25 @@
 from datetime import datetime
 import pytz
 
-def convert_time_zone(time_to_convert, from_tz, to_tz):
+def convert_time_zone(time_to_convert, from_zone_str, to_zone_str):
     """
-    Convert a datetime from one time zone to another.
-
+    Convert a datetime object from one timezone to another.
+    
     :param time_to_convert: The datetime object to convert.
-    :param from_tz: The source time zone as a string (e.g., 'UTC', 'America/New_York').
-    :param to_tz: The target time zone as a string.
+    :param from_zone_str: The original timezone as a string (e.g., 'UTC').
+    :param to_zone_str: The target timezone as a string (e.g., 'America/New_York').
     :return: The converted datetime object.
     """
-    # Define the source and target time zones
-    from_zone = pytz.timezone(from_tz)
-    to_zone = pytz.timezone(to_tz)
-    
-    # Localize the input datetime to the source time zone
-    localized_time = from_zone.localize(time_to_convert)
-    
-    # Convert to the target time zone
-    converted_time = localized_time.astimezone(to_zone)
-    
-    return converted_time
+    from_zone = pytz.timezone(from_zone_str)
+    to_zone = pytz.timezone(to_zone_str)
+
+    # Ensure the datetime object is timezone-aware
+    if time_to_convert.tzinfo is None or time_to_convert.tzinfo.utcoffset(time_to_convert) is None:
+        # If naive, localize it to the source timezone
+        time_to_convert = from_zone.localize(time_to_convert)
+    else:
+        # If already timezone-aware, convert it directly
+        time_to_convert = time_to_convert.astimezone(from_zone)
+
+    # Convert to target timezone
+    return time_to_convert.astimezone(to_zone)
