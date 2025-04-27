@@ -13,7 +13,7 @@ the answer if you get too stuck or want to check your work!
 Note: The starter code for this example is the solution.
 """
 
-from karel.stanfordkarel import *
+from stanfordkarel import *
 
 
 def main():
