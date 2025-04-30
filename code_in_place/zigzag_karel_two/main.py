@@ -4,7 +4,7 @@ solve the problem. You can click the blue show solution button on the left to se
 the answer if you get too stuck or want to check your work!
 """
 
-from karel.stanfordkarel import *
+from stanfordkarel import *
 
 def main():
     """
