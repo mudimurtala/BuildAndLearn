@@ -9,7 +9,7 @@ def main():
     time = float(time_str)
     distance = SPEED * time
     in_kilometers = distance / 1000
-    print(f"Bolt can run {distance} meters.")
+    print(f"Bolt can run this numbre of kiolomertre ina minute {distance} meters.")
     print(f"Which is equivalent to {in_kilometers} kilometers")
 
 
