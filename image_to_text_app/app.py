@@ -6,12 +6,6 @@ from werkzeug.utils import secure_filename # For secure file handling
 
 app = Flask(__name__)
 
-# --- Configuration ---
-# Set the path to your Tesseract executable (change if not in PATH)
-# Example for Windows:
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-# Example for Linux/macOS (often not needed if Tesseract is in PATH):
-# pytesseract.pytesseract.tesseract_cmd = '/usr/local/bin/tesseract' # Or wherever it's installed
 
 # Folder to store uploaded images and extracted text files
 UPLOAD_FOLDER = 'uploads'
