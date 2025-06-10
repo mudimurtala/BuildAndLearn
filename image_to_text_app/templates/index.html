@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text Converter (OCR)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .upload-section {
+            background-color: #e9f5ff;
+            border: 1px dashed #a0d8ff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 0 auto 15px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result-section {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        h2 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap; /* Ensures text wraps */
+            word-wrap: break-word; /* Ensures long words break */
+            max-height: 300px;
+            overflow-y: auto; /* Scroll for long text */
+            font-size: 0.9em;
+            color: #444;
+        }
+        .download-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download-link a:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: #d9534f;
+            background-color: #f2dede;
+            border: 1px solid #ebccd1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image to Text Converter (OCR)</h1>
+
+        {% if error_message %}
+            <div class="error-message">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <div class="upload-section">
+            <p>Upload an image file (e.g., JPG, PNG) containing text, and I'll extract it for you!</p>
+            <form method="POST" action="/" enctype="multipart/form-data">
+                <input type="file" name="image_file" accept="image/*" required>
+                <button type="submit">Extract Text</button>
+            </form>
+        </div>
+
+        {% if extracted_text is not none %}
+            <div class="result-section">
+                <h2>Extracted Text:</h2>
+                <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty." }}</pre>
+
+                {% if download_link %}
+                    <div class="download-link">
+                        <p>You can also download the text:</p>
+                        <a href="{{ download_link }}" download>Download Extracted Text</a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
