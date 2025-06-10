@@ -23,10 +23,10 @@
         /* Main Container */
         .container {
             width: 100%;
-            max-width: 760px;
+            max-width: 1100px; /* Increased max-width to accommodate two columns comfortably */
             background-color: #2a2a4a; /* Slightly lighter dark blue for the card */
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 12px; /* Softer rounded corners */
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
             margin-top: 30px;
             margin-bottom: 30px;
@@ -49,14 +49,45 @@
             font-size: 1.1em;
         }
 
+        /* Error Message */
+        .error-message {
+            color: #ff6b6b; /* Bright red for errors */
+            background-color: #4a1e1e; /* Dark red background for errors */
+            border: 1px solid #7c3a3a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* --- NEW: Two-Column Layout Styling --- */
+        .main-content-flex {
+            display: flex;
+            flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+            gap: 40px; /* Space between the columns */
+            justify-content: center; /* Center content when there's space */
+        }
+
+        .column {
+            flex: 1; /* Allows columns to grow and shrink */
+            min-width: 350px; /* Minimum width before columns wrap */
+            background-color: #2a2a4a; /* Keep card background for each column's content */
+            padding: 0; /* Remove padding here, sections inside will have their own */
+            border-radius: 12px;
+            box-shadow: none; /* No shadow on the column div itself, sections inside will have it */
+        }
+        /* --- END NEW --- */
+
         /* Section Styling */
         .section-header {
             font-size: 1.5em;
             color: #8c7ae6; /* Matching purple for sub-headers */
-            margin-top: 30px;
+            margin-top: 0; /* Adjust margin for column layout */
             margin-bottom: 20px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
             padding-bottom: 10px;
+            text-align: center; /* Center header in its column */
         }
 
         /* Upload Section */
@@ -66,8 +97,12 @@
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 0; /* No bottom margin, handled by column gap */
             transition: background-color 0.3s ease-in-out;
+            height: 100%; /* Make upload section fill column height */
+            display: flex; /* Use flex for internal centering */
+            flex-direction: column;
+            justify-content: center;
         }
         .upload-section:hover {
             background-color: #3f3f6e; /* Slightly lighter on hover */
@@ -77,17 +112,17 @@
             display: block;
             margin: 0 auto 20px auto;
             padding: 12px;
-            border: 1px solid #6c5ce7; /* Purple border */
+            border: 1px solid #6c5ce7;
             border-radius: 6px;
             font-size: 1em;
             width: calc(100% - 24px);
-            background-color: #3f3f6e; /* Dark background for input field */
-            color: #ffffff; /* White text inside input */
+            background-color: #3f3f6e;
+            color: #ffffff;
             cursor: pointer;
             transition: border-color 0.3s ease;
         }
         input[type="file"]::-webkit-file-upload-button {
-            background-color: #8c7ae6; /* Purple button for file input */
+            background-color: #8c7ae6;
             color: white;
             padding: 8px 15px;
             border: none;
@@ -97,14 +132,14 @@
             transition: background-color 0.3s ease;
         }
         input[type="file"]::-webkit-file-upload-button:hover {
-            background-color: #715ed1; /* Darker purple on hover */
+            background-color: #715ed1;
         }
 
         /* Buttons */
         button {
             padding: 12px 30px;
-            background-color: #50E3C2; /* Retain vibrant green accent for action */
-            color: #1a1a2e; /* Dark text on green for strong contrast */
+            background-color: #50E3C2;
+            color: #1a1a2e;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -122,23 +157,30 @@
 
         /* Result Section */
         .result-section {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px dashed rgba(255, 255, 255, 0.1); /* Subtle dashed separator */
+            background-color: #34345c; /* Darker blue-purple for result area */
+            border: 2px solid #6c5ce7; /* Solid purple border */
+            padding: 30px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease-in-out;
+            /* No margin-top or padding-top here as it's within a column */
+            height: 100%; /* Make result section fill column height */
+            display: flex; /* Use flex for internal layout */
+            flex-direction: column;
         }
 
         pre {
-            background-color: #333355; /* Darker background for text area */
-            border: 1px solid #4a4a7a; /* Matching border */
+            background-color: #333355;
+            border: 1px solid #4a4a7a;
             padding: 20px;
             border-radius: 8px;
             white-space: pre-wrap;
             word-wrap: break-word;
-            max-height: 400px;
+            max-height: 400px; /* Fixed height for scrollbar within column */
             overflow-y: auto;
             font-family: 'Consolas', 'Monaco', monospace;
             font-size: 0.95em;
-            color: #d0d0d0; /* Light text for readability on dark background */
+            color: #d0d0d0;
+            flex-grow: 1; /* Allows the pre tag to take available space */
         }
 
         /* Download Link */
@@ -147,7 +189,7 @@
             margin-top: 25px;
         }
         .download-link a {
-            color: #50E3C2; /* Green accent for the link */
+            color: #50E3C2;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1em;
@@ -157,20 +199,32 @@
             text-decoration: underline;
             color: #43C6B1;
         }
-
-        /* Error Message */
-        .error-message {
-            color: #ff6b6b; /* Bright red for errors */
-            background-color: #4a1e1e; /* Dark red background for errors */
-            border: 1px solid #7c3a3a;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        /* No text found message */
+        .no-text-found {
             text-align: center;
-            font-weight: 600;
+            color: #ccc;
+            font-style: italic;
+            margin-top: 20px;
         }
 
         /* Responsive adjustments */
+        @media (max-width: 900px) { /* Adjust breakpoint for stacking columns */
+            .main-content-flex {
+                flex-direction: column; /* Stack columns vertically */
+                gap: 20px; /* Adjust gap when stacked */
+            }
+            .column {
+                min-width: unset; /* Remove min-width when stacked */
+            }
+            .upload-section {
+                height: auto; /* Auto height when stacked */
+            }
+            .result-section {
+                margin-top: 0; /* Handled by gap */
+                height: auto; /* Auto height when stacked */
+            }
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -187,7 +241,7 @@
                 font-size: 1em;
                 margin-bottom: 25px;
             }
-            .upload-section {
+            .upload-section, .result-section {
                 padding: 20px;
             }
             button {
@@ -215,26 +269,34 @@
             </div>
         {% endif %}
 
-        <div class="upload-section">
-            <p>Ready to digitize your documents? Upload an image below.</p>
-            <form method="POST" action="/" enctype="multipart/form-data">
-                <input type="file" name="image_file" accept="image/*" required>
-                <button type="submit">Extract Text Now</button>
-            </form>
-        </div>
-
-        {% if extracted_text is not none %}
-            <div class="result-section">
-                <h2 class="section-header">Extracted Text:</h2>
-                <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty. Try an image with clear, readable text." }}</pre>
-
-                {% if download_link %}
-                    <div class="download-link">
-                        <a href="{{ download_link }}" download>Download Extracted Text (.txt)</a>
-                    </div>
-                {% endif %}
+        <div class="main-content-flex">
+            <div class="column">
+                <div class="upload-section">
+                    <p>Ready to digitize your documents? Upload an image below.</p>
+                    <form method="POST" action="/" enctype="multipart/form-data">
+                        <input type="file" name="image_file" accept="image/*" required>
+                        <button type="submit">Extract Text Now</button>
+                    </form>
+                </div>
             </div>
-        {% endif %}
+
+            {% if extracted_text is not none %}
+                <div class="column">
+                    <div class="result-section">
+                        <h2 class="section-header">Extracted Text:</h2>
+                        <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty. Try an image with clear, readable text." }}</pre>
+
+                        {% if download_link %}
+                            <div class="download-link">
+                                <a href="{{ download_link }}" download>Download Extracted Text (.txt)</a>
+                            </div>
+                        {% else %}
+                            <p class="no-text-found">No downloadable text file (perhaps no text was extracted).</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>
