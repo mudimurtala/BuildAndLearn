@@ -3,105 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to Text Converter (OCR)</title>
+    <title>Intelligent OCR Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* General Body Styling (Deep Dark Theme) */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a2e; /* Very dark blue-purple background */
+            color: #e0e0e0; /* Light gray text for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
             line-height: 1.6;
         }
+
+        /* Main Container */
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 760px;
+            background-color: #2a2a4a; /* Slightly lighter dark blue for the card */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle light border */
         }
+
+        /* Headers */
         h1 {
-            color: #0056b3;
+            color: #8c7ae6; /* A vibrant, deep purple for the main title */
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 2.2em;
         }
+
+        .subtitle {
+            text-align: center;
+            color: #bbbbbb; /* Lighter gray for subtitle */
+            margin-bottom: 35px;
+            font-size: 1.1em;
+        }
+
+        /* Section Styling */
+        .section-header {
+            font-size: 1.5em;
+            color: #8c7ae6; /* Matching purple for sub-headers */
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+            padding-bottom: 10px;
+        }
+
+        /* Upload Section */
         .upload-section {
-            background-color: #e9f5ff;
-            border: 1px dashed #a0d8ff;
-            padding: 25px;
-            border-radius: 8px;
+            background-color: #34345c; /* Darker blue-purple for upload area */
+            border: 2px dashed #6c5ce7; /* Vibrant purple dashed border */
+            padding: 30px;
+            border-radius: 10px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            transition: background-color 0.3s ease-in-out;
         }
+        .upload-section:hover {
+            background-color: #3f3f6e; /* Slightly lighter on hover */
+        }
+
         input[type="file"] {
             display: block;
-            margin: 0 auto 15px auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
+            margin: 0 auto 20px auto;
+            padding: 12px;
+            border: 1px solid #6c5ce7; /* Purple border */
+            border-radius: 6px;
+            font-size: 1em;
+            width: calc(100% - 24px);
+            background-color: #3f3f6e; /* Dark background for input field */
+            color: #ffffff; /* White text inside input */
+            cursor: pointer;
+            transition: border-color 0.3s ease;
         }
-        button {
-            padding: 12px 25px;
-            background-color: #007bff;
+        input[type="file"]::-webkit-file-upload-button {
+            background-color: #8c7ae6; /* Purple button for file input */
             color: white;
+            padding: 8px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 17px;
+            margin-right: 15px;
             transition: background-color 0.3s ease;
         }
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background-color: #715ed1; /* Darker purple on hover */
+        }
+
+        /* Buttons */
+        button {
+            padding: 12px 30px;
+            background-color: #50E3C2; /* Retain vibrant green accent for action */
+            color: #1a1a2e; /* Dark text on green for strong contrast */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
         button:hover {
-            background-color: #0056b3;
+            background-color: #43C6B1;
+            transform: translateY(-2px);
         }
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Result Section */
         .result-section {
-            margin-top: 30px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1); /* Subtle dashed separator */
         }
-        h2 {
-            color: #0056b3;
-            margin-bottom: 15px;
-        }
+
         pre {
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 4px;
-            white-space: pre-wrap; /* Ensures text wraps */
-            word-wrap: break-word; /* Ensures long words break */
-            max-height: 300px;
-            overflow-y: auto; /* Scroll for long text */
-            font-size: 0.9em;
-            color: #444;
+            background-color: #333355; /* Darker background for text area */
+            border: 1px solid #4a4a7a; /* Matching border */
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95em;
+            color: #d0d0d0; /* Light text for readability on dark background */
         }
+
+        /* Download Link */
         .download-link {
-            display: block;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         .download-link a {
-            color: #007bff;
+            color: #50E3C2; /* Green accent for the link */
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
         }
         .download-link a:hover {
             text-decoration: underline;
+            color: #43C6B1;
         }
+
+        /* Error Message */
         .error-message {
-            color: #d9534f;
-            background-color: #f2dede;
-            border: 1px solid #ebccd1;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 20px;
+            color: #ff6b6b; /* Bright red for errors */
+            background-color: #4a1e1e; /* Dark red background for errors */
+            border: 1px solid #7c3a3a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
             text-align: center;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .subtitle {
+                font-size: 1em;
+                margin-bottom: 25px;
+            }
+            .upload-section {
+                padding: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            input[type="file"] {
+                width: calc(100% - 20px);
+            }
+            pre {
+                padding: 15px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Image to Text Converter (OCR)</h1>
+        <h1>Intelligent OCR Tool</h1>
+        <p class="subtitle">Extract text from your images with ease using Python!</p>
 
         {% if error_message %}
             <div class="error-message">
@@ -110,22 +216,21 @@
         {% endif %}
 
         <div class="upload-section">
-            <p>Upload an image file (e.g., JPG, PNG) containing text, and I'll extract it for you!</p>
+            <p>Ready to digitize your documents? Upload an image below.</p>
             <form method="POST" action="/" enctype="multipart/form-data">
                 <input type="file" name="image_file" accept="image/*" required>
-                <button type="submit">Extract Text</button>
+                <button type="submit">Extract Text Now</button>
             </form>
         </div>
 
         {% if extracted_text is not none %}
             <div class="result-section">
-                <h2>Extracted Text:</h2>
-                <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty." }}</pre>
+                <h2 class="section-header">Extracted Text:</h2>
+                <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty. Try an image with clear, readable text." }}</pre>
 
                 {% if download_link %}
                     <div class="download-link">
-                        <p>You can also download the text:</p>
-                        <a href="{{ download_link }}" download>Download Extracted Text</a>
+                        <a href="{{ download_link }}" download>Download Extracted Text (.txt)</a>
                     </div>
                 {% endif %}
             </div>
