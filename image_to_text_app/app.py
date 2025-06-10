@@ -49,8 +49,6 @@ def index():
                 image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 file.save(image_path)
 
-                # --- Core OCR Logic (File I/O: Reading Image) ---
-                # Open the image using Pillow
                 img = Image.open(image_path)
 
                 # Perform OCR to extract text
