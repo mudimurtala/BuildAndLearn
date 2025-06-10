@@ -15,7 +15,7 @@
             color: #e0e0e0; /* Light gray text for contrast */
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: flex-start; /* Keeps content at the top of the viewport */
             min-height: 100vh;
             line-height: 1.6;
         }
@@ -32,7 +32,7 @@
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle light border */
 
-            /* --- CHANGE 2: Make container a flex column to correctly wrap content --- */
+            /* Ensure container is a flex column to wrap its content */
             display: flex;
             flex-direction: column;
         }
@@ -71,22 +71,23 @@
             flex-wrap: wrap; /* Allows columns to stack on smaller screens */
             gap: 40px; /* Space between the columns */
             justify-content: center; /* Center content when there's space */
-            flex-grow: 1; /* Allow this section to take available vertical space in the container */
+            /* Remove flex-grow: 1; from here. Let the container handle overall height */
         }
 
         .column {
             flex: 1; /* Allows columns to grow and shrink */
             min-width: 350px; /* Minimum width before columns wrap */
             background-color: #2a2a4a; /* Keep card background for each column's content */
-            padding: 0; /* Remove padding here, sections inside will have their own */
+            padding: 0;
             border-radius: 12px;
-            box-shadow: none; /* No shadow on the column div itself, sections inside will have it */
+            box-shadow: none;
+            /* Remove fixed height if any to let content dictate it */
         }
 
         /* Section Styling */
         .section-header {
             font-size: 1.5em;
-            color: #8c7ae6; /* Matching purple for sub-headers */
+            color: #8c7ae6;
             margin-top: 0;
             margin-bottom: 20px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
@@ -103,13 +104,12 @@
             text-align: center;
             margin-bottom: 0;
             transition: background-color 0.3s ease-in-out;
-            height: 100%; /* Make upload section fill column height */
+            /* Remove height: 100%; Let content dictate height */
             display: flex;
             flex-direction: column;
-            /* --- CHANGE 1: Align content to the top --- */
-            justify-content: flex-start;
-            /* Add some top padding to adjust position if needed */
+            justify-content: flex-start; /* Aligns content to the top */
             padding-top: 40px; /* Adjust this value to fine-tune its position */
+            min-height: 250px; /* Give it a minimum height to avoid collapsing */
         }
         .upload-section:hover {
             background-color: #3f3f6e;
@@ -117,7 +117,7 @@
 
         input[type="file"] {
             display: block;
-            margin: 20px auto; /* Adjust top margin for spacing from text */
+            margin: 20px auto;
             padding: 12px;
             border: 1px solid #6c5ce7;
             border-radius: 6px;
@@ -169,9 +169,10 @@
             padding: 30px;
             border-radius: 10px;
             transition: background-color 0.3s ease-in-out;
-            height: 100%;
+            /* Remove height: 100%; Let content dictate height */
             display: flex;
             flex-direction: column;
+            min-height: 250px; /* Give it a minimum height to match upload section */
         }
 
         pre {
@@ -223,9 +224,8 @@
                 min-width: unset;
             }
             .upload-section, .result-section {
-                height: auto;
-            }
-            .upload-section {
+                height: auto; /* Reset height when stacked */
+                min-height: unset; /* Remove min-height when stacked */
                 padding-top: 30px; /* Reset padding-top for stacked view */
             }
         }
