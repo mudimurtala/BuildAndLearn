@@ -26,11 +26,15 @@
             max-width: 1100px; /* Increased max-width to accommodate two columns comfortably */
             background-color: #2a2a4a; /* Slightly lighter dark blue for the card */
             padding: 40px;
-            border-radius: 12px; /* Softer rounded corners */
+            border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
             margin-top: 30px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle light border */
+
+            /* --- CHANGE 2: Make container a flex column to correctly wrap content --- */
+            display: flex;
+            flex-direction: column;
         }
 
         /* Headers */
@@ -61,12 +65,13 @@
             font-weight: 600;
         }
 
-        /* --- NEW: Two-Column Layout Styling --- */
+        /* Two-Column Layout Styling */
         .main-content-flex {
             display: flex;
             flex-wrap: wrap; /* Allows columns to stack on smaller screens */
             gap: 40px; /* Space between the columns */
             justify-content: center; /* Center content when there's space */
+            flex-grow: 1; /* Allow this section to take available vertical space in the container */
         }
 
         .column {
@@ -77,40 +82,42 @@
             border-radius: 12px;
             box-shadow: none; /* No shadow on the column div itself, sections inside will have it */
         }
-        /* --- END NEW --- */
 
         /* Section Styling */
         .section-header {
             font-size: 1.5em;
             color: #8c7ae6; /* Matching purple for sub-headers */
-            margin-top: 0; /* Adjust margin for column layout */
+            margin-top: 0;
             margin-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 10px;
-            text-align: center; /* Center header in its column */
+            text-align: center;
         }
 
         /* Upload Section */
         .upload-section {
-            background-color: #34345c; /* Darker blue-purple for upload area */
-            border: 2px dashed #6c5ce7; /* Vibrant purple dashed border */
+            background-color: #34345c;
+            border: 2px dashed #6c5ce7;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 0; /* No bottom margin, handled by column gap */
+            margin-bottom: 0;
             transition: background-color 0.3s ease-in-out;
             height: 100%; /* Make upload section fill column height */
-            display: flex; /* Use flex for internal centering */
+            display: flex;
             flex-direction: column;
-            justify-content: center;
+            /* --- CHANGE 1: Align content to the top --- */
+            justify-content: flex-start;
+            /* Add some top padding to adjust position if needed */
+            padding-top: 40px; /* Adjust this value to fine-tune its position */
         }
         .upload-section:hover {
-            background-color: #3f3f6e; /* Slightly lighter on hover */
+            background-color: #3f3f6e;
         }
 
         input[type="file"] {
             display: block;
-            margin: 0 auto 20px auto;
+            margin: 20px auto; /* Adjust top margin for spacing from text */
             padding: 12px;
             border: 1px solid #6c5ce7;
             border-radius: 6px;
@@ -157,14 +164,13 @@
 
         /* Result Section */
         .result-section {
-            background-color: #34345c; /* Darker blue-purple for result area */
-            border: 2px solid #6c5ce7; /* Solid purple border */
+            background-color: #34345c;
+            border: 2px solid #6c5ce7;
             padding: 30px;
             border-radius: 10px;
             transition: background-color 0.3s ease-in-out;
-            /* No margin-top or padding-top here as it's within a column */
-            height: 100%; /* Make result section fill column height */
-            display: flex; /* Use flex for internal layout */
+            height: 100%;
+            display: flex;
             flex-direction: column;
         }
 
@@ -175,7 +181,7 @@
             border-radius: 8px;
             white-space: pre-wrap;
             word-wrap: break-word;
-            max-height: 400px; /* Fixed height for scrollbar within column */
+            max-height: 400px;
             overflow-y: auto;
             font-family: 'Consolas', 'Monaco', monospace;
             font-size: 0.95em;
@@ -208,20 +214,19 @@
         }
 
         /* Responsive adjustments */
-        @media (max-width: 900px) { /* Adjust breakpoint for stacking columns */
+        @media (max-width: 900px) {
             .main-content-flex {
-                flex-direction: column; /* Stack columns vertically */
-                gap: 20px; /* Adjust gap when stacked */
+                flex-direction: column;
+                gap: 20px;
             }
             .column {
-                min-width: unset; /* Remove min-width when stacked */
+                min-width: unset;
+            }
+            .upload-section, .result-section {
+                height: auto;
             }
             .upload-section {
-                height: auto; /* Auto height when stacked */
-            }
-            .result-section {
-                margin-top: 0; /* Handled by gap */
-                height: auto; /* Auto height when stacked */
+                padding-top: 30px; /* Reset padding-top for stacked view */
             }
         }
 
@@ -249,54 +254,4 @@
                 font-size: 1em;
             }
             input[type="file"] {
-                width: calc(100% - 20px);
-            }
-            pre {
-                padding: 15px;
-                font-size: 0.9em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Intelligent OCR Tool</h1>
-        <p class="subtitle">Extract text from your images with ease using Python!</p>
-
-        {% if error_message %}
-            <div class="error-message">
-                {{ error_message }}
-            </div>
-        {% endif %}
-
-        <div class="main-content-flex">
-            <div class="column">
-                <div class="upload-section">
-                    <p>Ready to digitize your documents? Upload an image below.</p>
-                    <form method="POST" action="/" enctype="multipart/form-data">
-                        <input type="file" name="image_file" accept="image/*" required>
-                        <button type="submit">Extract Text Now</button>
-                    </form>
-                </div>
-            </div>
-
-            {% if extracted_text is not none %}
-                <div class="column">
-                    <div class="result-section">
-                        <h2 class="section-header">Extracted Text:</h2>
-                        <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty. Try an image with clear, readable text." }}</pre>
-
-                        {% if download_link %}
-                            <div class="download-link">
-                                <a href="{{ download_link }}" download>Download Extracted Text (.txt)</a>
-                            </div>
-                        {% else %}
-                            <p class="no-text-found">No downloadable text file (perhaps no text was extracted).</p>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endif %}
-        </div>
-    </div>
-</body>
-</html>
+                width:
