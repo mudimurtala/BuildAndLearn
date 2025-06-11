@@ -24,3 +24,12 @@ censusair/
 ├── webapp/ # Streamlit app
 ├── assets/ # Diagrams or visual media
 
+
+## 📦 Requirements
+
+All required Python libraries are listed in `requirements.txt`. Install them using:
+
+```bash
+pip install -r requirements.txt
+```
+
