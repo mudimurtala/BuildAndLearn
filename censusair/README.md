@@ -42,3 +42,18 @@ cd webapp
 streamlit run app.py
 ```
 
+## 🎯 Challenge Fit
+
+CensusAir fulfills the challenge requirement of using AI for real-world simulation by identifying occupancy levels based on environmental patterns, without needing physical sensors.
+
+## 👨🏽‍💻 Built With
+
+
+Python
+
+Pandas, NumPy, scikit-learn
+
+Streamlit
+
+Matplotlib, Plotly
+
