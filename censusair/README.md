@@ -16,3 +16,11 @@ CensusAir simulates environmental sensor data and uses a trained AI model to pre
 
 ## 🏗️ Project Structure
 
+censusair/
+├── data/ # Simulated dataset
+├── models/ # Saved ML model
+├── notebooks/ # Jupyter for training and testing
+├── src/ # Python modules for logic and ML
+├── webapp/ # Streamlit app
+├── assets/ # Diagrams or visual media
+
