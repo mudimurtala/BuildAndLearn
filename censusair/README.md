@@ -33,3 +33,12 @@ All required Python libraries are listed in `requirements.txt`. Install them usi
 pip install -r requirements.txt
 ```
 
+## ▶️ Running the App
+
+To start the Streamlit app:
+
+```bash
+cd webapp
+streamlit run app.py
+```
+
