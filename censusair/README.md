@@ -57,3 +57,22 @@ Streamlit
 
 Matplotlib, Plotly
 
+## 📄 License
+
+This project is open-source and developed for educational/challenge purposes.
+
+
+---
+
+## 📄 `requirements.txt`
+
+```
+txt
+pandas
+numpy
+scikit-learn
+streamlit
+plotly
+matplotlib
+joblib
+```
