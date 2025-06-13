@@ -20,7 +20,7 @@ def generate_simulated_data(num_records=100):
     return data
 
 
-def save_to_csv(data, filename='simulated_data.csv'):
+def save_to_csv(data, filename='data/simulated_data.csv'):
     header = ['timestamp', 'co2_level', 'temperature', 'humidity', 'actual_occupancy']
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -30,4 +30,4 @@ def save_to_csv(data, filename='simulated_data.csv'):
 if __name__ == "__main__":
     data = generate_simulated_data(288)  # 1 day of data at 5-min intervals
     save_to_csv(data)
-    print("Simulated data saved to 'simulated_data.csv'")
+    print("Simulated data saved to 'data/simulated_data.csv'")
