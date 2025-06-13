@@ -20,4 +20,4 @@ def train_and_save_model(csv_path, model_path):
     print(f"Model trained and saved to: {model_path}")
 
 if __name__ == "__main__":
-    train_and_save_model("simulated_data.csv", "models/occupancy_model.pkl")
+    train_and_save_model("data/simulated_data.csv", "models/occupancy_model.pkl")
