@@ -3,7 +3,7 @@
 import joblib
 import numpy as np
 
-def load_model(model_path="../models/occupancy_model.pkl"):
+def load_model(model_path="/models/occupancy_model.pkl"):
     return joblib.load(model_path)
 
 def make_prediction(model, co2, temp, humidity):
