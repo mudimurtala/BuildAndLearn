@@ -1,23 +1,35 @@
-# src/train_model.py
+# train_model.py
 
+import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 import joblib
-from preprocess import load_and_preprocess
+import os
 
-def train_and_save_model(csv_path, model_path):
-    X, y = load_and_preprocess(csv_path)
+# Load the enriched dataset
+df = pd.read_csv("data/simulated_data_enriched.csv")
 
-    # Split into training and testing
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Features and target
+features = ['co2_level', 'temperature', 'humidity', 'time_of_day', 'day_of_week', 'light_level', 'motion_detected']
+target = 'actual_occupancy'
 
-    # Train the model
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
+X = df[features]
+y = df[target]
 
-    # Save the model
-    joblib.dump(model, model_path)
-    print(f"Model trained and saved to: {model_path}")
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-if __name__ == "__main__":
-    train_and_save_model("data/simulated_data.csv", "models/occupancy_model.pkl")
+# Model
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Evaluation
+y_pred = model.predict(X_test)
+mse = mean_squared_error(y_test, y_pred)
+print(f"✅ Model trained. MSE: {mse:.2f}")
+
+# Save model
+os.makedirs("models", exist_ok=True)
+joblib.dump(model, "models/occupancy_model.pkl")
+print("✅ Model saved to models/occupancy_model.pkl")
