@@ -1,9 +1,11 @@
 # webapp/dashboard.py
 
+from datetime import datetime
 import altair as alt
 import pandas as pd
 import streamlit as st
 from utils import load_model, make_prediction
+import os
 
 def run_dashboard():
     st.set_page_config(page_title="CensusAir", layout="wide")
@@ -24,8 +26,14 @@ def run_dashboard():
             if st.button("Predict Occupancy"):
                 model = load_model()
                 prediction = make_prediction(model, co2, temp, humidity)
+
+                # Show prediction
                 st.metric("🧍 Estimated Occupancy", f"{prediction} people")
                 st.toast("Prediction complete 🎉")
+
+                # Log it after prediction is made
+                log_prediction(co2, temp, humidity, prediction)
+
 
             # Add vertical space to make this column taller to match right_col
             st.markdown("<div style='height: 500px'></div>", unsafe_allow_html=True)
@@ -56,3 +64,19 @@ def run_dashboard():
     # Optional horizontal line
     st.markdown("---")
     st.caption("This is a demo using simulated sensor data and a machine learning model.")
+
+
+def log_prediction(co2, temp, humidity, prediction, filepath="data/prediction_logs.csv"):
+    log_df = pd.DataFrame([{
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "co2_level": co2,
+        "temperature": temp,
+        "humidity": humidity,
+        "predicted_occupancy": prediction
+    }])
+
+    # Append to CSV or create if doesn't exist
+    if not os.path.exists(filepath):
+        log_df.to_csv(filepath, index=False)
+    else:
+        log_df.to_csv(filepath, mode='a', header=False, index=False)
