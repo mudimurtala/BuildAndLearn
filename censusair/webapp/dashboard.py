@@ -27,6 +27,8 @@ def log_prediction(co2, temp, humidity, prediction):
 # -------------------------
 
 
+
+
 def run_dashboard():
     st.set_page_config(page_title="CensusAir", layout="wide")
     st.title("🌍 CensusAir - Real-time Occupancy Estimator")
@@ -36,8 +38,10 @@ def run_dashboard():
     # Create two columns with fixed width ratio
     left_col, right_col = st.columns([1, 2], gap="large")
 
+
     with left_col:
         with st.container():  # Enclose in a container to help match height
+            st.markdown('<div class="debug-container">', unsafe_allow_html=True)
             st.subheader("🛠️ Input Controls")
             co2 = st.slider("CO₂ Level (ppm)", 400, 2000, 800)
             temp = st.slider("Temperature (°C)", 15, 40, 25)
@@ -68,6 +72,8 @@ def run_dashboard():
 
             # Add vertical space to make this column taller to match right_col
             st.markdown("<div style='height: 500px'></div>", unsafe_allow_html=True)
+
+    
 
     with right_col:
         with st.container():
