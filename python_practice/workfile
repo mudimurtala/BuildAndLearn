@@ -1,4 +1,5 @@
-0123456789abcdeft
+456
+01234567
 from sound.effects import echo
 
 # Relative imports
