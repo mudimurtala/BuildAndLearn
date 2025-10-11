@@ -67,7 +67,7 @@ export function WhyChooseUs() {
           <div className="relative order-first lg:order-last px-4 sm:px-0">
             <div className="aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1576669801838-1b1c52121e6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwbGFib3JhdG9yeSUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NTkzOTI0MTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="https://images.unsplash.com/photo-1679134015772-943d09a750ae?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1lZGljYWwlMjBsYWJvcmF0b3J5JTIwd2l0aCUyMGFuJTIwYWZyaWNhbiUyMGxhYiUyMHByYWN0aXRpb25lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=300"
                 alt="Medical Laboratory"
                 className="w-full h-full object-cover"
               />

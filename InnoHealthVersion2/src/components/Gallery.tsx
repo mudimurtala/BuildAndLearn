@@ -8,7 +8,7 @@ const galleryItems = [
   {
     image: "https://images.unsplash.com/photo-1536064479547-7ee40b74b807?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwaGVhbHRoY2FyZSUyMGNvbW11bml0eXxlbnwxfHx8fDE3NjAxNzgyODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
     title: "Community Health Outreach",
-    location: "Kaduna State",
+    location: "Kano State",
     description: "Providing accessible healthcare services to underserved communities across Kaduna State",
     category: "Outreach"
   },
@@ -36,14 +36,14 @@ const galleryItems = [
   {
     image: "https://images.unsplash.com/photo-1650153265880-889a8b60a10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOaWdlcmlhJTIwbWVkaWNhbCUyMG91dHJlYWNofGVufDF8fHx8MTc2MDE3ODI4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
     title: "Telemedicine Services",
-    location: "Kaduna & Katsina States",
+    location: "Kano, Kaduna & Katsina States",
     description: "Bridging the gap in healthcare access through remote consultations and digital health services",
     category: "Telemedicine"
   },
   {
-    image: "https://images.unsplash.com/photo-1595780975747-e158890f48d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwcGhhcm1hY3klMjBtZWRpY2luZXxlbnwxfHx8fDE3NjAxNzgyODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1696861308115-54a5e5a134b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGhhcm1hY2V1dGljYWwlMjBzZXJ2aWNlcyUyMGluJTIwbm9ydGhlcm4lMjBuaWdlcmlhfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
     title: "Pharmaceutical Services",
-    location: "Kaduna State",
+    location: "Kano State",
     description: "Ensuring access to quality medications and pharmaceutical care for all residents",
     category: "Pharmacy"
   }
@@ -52,26 +52,26 @@ const galleryItems = [
 const stats = [
   {
     icon: Users,
-    value: "50,000+",
+    value: "4,000+",
     label: "Patients Served",
     color: "from-blue-500 to-blue-600"
   },
   {
     icon: Stethoscope,
-    value: "200+",
+    value: "80+",
     label: "Healthcare Professionals",
     color: "from-teal-500 to-teal-600"
   },
   {
     icon: Heart,
-    value: "100+",
+    value: "30+",
     label: "Community Programs",
     color: "from-blue-600 to-teal-500"
   },
   {
     icon: MapPin,
-    value: "2 States",
-    label: "Kaduna & Katsina",
+    value: "3 States",
+    label: "Kano, Kaduna & Katsina",
     color: "from-teal-600 to-blue-500"
   }
 ];
@@ -95,7 +95,7 @@ export function Gallery() {
             Transforming Healthcare in Northern Nigeria
           </h3>
           <p className="text-gray-600 sm:text-lg max-w-3xl mx-auto px-4">
-            Witness the positive change we're bringing to communities across Kaduna and Katsina States through innovative healthcare solutions and compassionate service delivery.
+            Witness the positive change we're bringing to communities across Northern Nigeria through innovative healthcare solutions and compassionate service delivery.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ export function Gallery() {
               Join Us in Making a Difference
             </h3>
             <p className="text-blue-50 sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Together, we can continue to expand access to quality healthcare services across Kaduna and Katsina States.
+              Together, we can continue to expand access to quality healthcare services across Nigeria.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
