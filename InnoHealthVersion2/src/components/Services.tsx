@@ -31,6 +31,12 @@ const services = [
     title: "Healthcare Consultancy Services",
     description: "Expert guidance on healthcare system optimization, technology integration, and operational excellence.",
     color: "blue"
+  },
+  {
+    icon: Stethoscope,
+    title: "Customer Experience Services",
+    description: "Enjoy good customer service experience with us, as we always do our best to make you happier. You are the most valuable asset we have, and we must serve you well.",
+    color: "teal"
   }
 ];
 
