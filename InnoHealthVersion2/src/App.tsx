@@ -5,6 +5,7 @@ import { Telemedicine } from "./components/Telemedicine";
 import { Gallery } from "./components/Gallery";
 import { WhyChooseUs } from "./components/WhyChooseUs";
 import { CallToAction } from "./components/CallToAction";
+import { Team } from "./components/Team";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";
 
@@ -17,6 +18,7 @@ export default function App() {
       <Telemedicine />
       <Gallery />
       <WhyChooseUs />
+      <Team />
       <CallToAction />
       <Footer />
       <Toaster />

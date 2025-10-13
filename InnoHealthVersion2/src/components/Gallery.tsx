@@ -9,7 +9,7 @@ const galleryItems = [
     image: "https://images.unsplash.com/photo-1536064479547-7ee40b74b807?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwaGVhbHRoY2FyZSUyMGNvbW11bml0eXxlbnwxfHx8fDE3NjAxNzgyODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
     title: "Community Health Outreach",
     location: "Kano State",
-    description: "Providing accessible healthcare services to underserved communities across Kaduna State",
+    description: "Providing accessible healthcare services to underserved communities across Kano State",
     category: "Outreach"
   },
   {
@@ -92,10 +92,10 @@ export function Gallery() {
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-teal-600 mb-3 md:mb-4">Our Impact</h2>
           <h3 className="text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 leading-tight px-4">
-            Transforming Healthcare in Northern Nigeria
+            Transforming Healthcare in Nigeria
           </h3>
           <p className="text-gray-600 sm:text-lg max-w-3xl mx-auto px-4">
-            Witness the positive change we're bringing to communities across Northern Nigeria through innovative healthcare solutions and compassionate service delivery.
+            Witness the positive change we're bringing to communities across  Nigeria through innovative healthcare solutions and compassionate service delivery.
           </p>
         </div>
 
