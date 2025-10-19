@@ -1,4 +1,5 @@
 import { Menu, X, Activity, Users, Heart, TrendingUp, Smartphone, Calendar, FileText, MessageSquare, Shield, Database, ChartBar, UserCheck, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { Button } from "./components/ui/button";
@@ -176,7 +177,12 @@ export default function App() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Activity className="w-6 h-6 text-purple-700" />
               </div>
@@ -186,10 +192,15 @@ export default function App() {
               <p className="text-gray-600">
                 State-of-the-art diagnostic equipment, biomedical solutions, and comprehensive medical testing for accurate analysis and research.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-pink-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
                 <Heart className="w-6 h-6 text-pink-600" />
               </div>
@@ -199,10 +210,15 @@ export default function App() {
               <p className="text-gray-600">
                 Expert guidance on healthcare system optimization, technology integration, and operational excellence.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-purple-700" />
               </div>
@@ -212,10 +228,15 @@ export default function App() {
               <p className="text-gray-600">
                 Enjoy good customer service experience with us, as we always do our best to make you happier. You are the most valuable asset we have, and we must serve you well.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 4 */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-pink-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
                 <Database className="w-6 h-6 text-pink-600" />
               </div>
@@ -225,10 +246,15 @@ export default function App() {
               <p className="text-gray-600">
                 High-quality pharmaceutical products and convenient online pharmacy services meeting international standards for patient care.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 5 */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-700" />
               </div>
@@ -238,10 +264,15 @@ export default function App() {
               <p className="text-gray-600">
                 Remote healthcare consultations and digital health platforms connecting patients with medical professionals across Africa.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 6 */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 border border-transparent hover:border-pink-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-pink-600" />
               </div>
@@ -251,7 +282,7 @@ export default function App() {
               <p className="text-gray-600">
                 Cutting-edge artificial intelligence systems for diagnostics, patient management, and data analysis.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -264,37 +295,58 @@ export default function App() {
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
+            {/* Feature Cards with Framer Motion */}
+            <motion.div
+              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Smartphone className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">Mobile Access</h4>
               <p className="text-sm text-gray-600">Access healthcare services anytime, anywhere</p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div
+              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">Easy Scheduling</h4>
               <p className="text-sm text-gray-600">Book appointments with ease</p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div
+              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">Digital Records</h4>
               <p className="text-sm text-gray-600">Secure and accessible health records</p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div
+              className="text-center bg-white rounded-lg shadow-md p-6 hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-16 h-16 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-8 h-8 text-white" />
               </div>
               <h4 className="mb-2">24/7 Support</h4>
               <p className="text-sm text-gray-600">Round-the-clock healthcare assistance</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -312,108 +364,115 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            {/* Service Cards with Framer Motion */}
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Primary Care</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                 <Activity className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Specialized Care</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-gray-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                 <Database className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Health Informatics</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <motion.div
+              className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="w-12 h-12 bg-purple-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                 <ChartBar className="w-6 h-6 text-white" />
               </div>
               <p className="text-sm">Analytics & Insights</p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Blog/News Cards */}
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1718010588689-9806ce642d39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwZWxkZXJseSUyMHBhdGllbnQlMjBjYXJlfGVufDF8fHx8MTc2MDc1Mzg4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Community Health Outreach"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="mb-2">Community Health Outreach</h4>
-                <p className="text-sm text-gray-600">Providing accessible healthcare services to underserved communities across Kano State</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1632054229892-21103035a686?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwZG9jdG9yJTIwcGF0aWVudHxlbnwxfHx8fDE3NjAxNzgyODJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Senior Care Services"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="mb-2">Quality Patient Care</h4>
-                <p className="text-sm text-gray-600">Delivering exceptional medical consultations and treatments to families in Katsina communities</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwdGVjaG5vbG9neSUyMEFmcmljYXxlbnwxfHx8fDE3NjAxNzgyODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="AI-Powered Disease Detection"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="mb-2">AI-Powered Healthcare Solutions</h4>
-                <p className="text-sm text-gray-600">Implementing cutting-edge technology to revolutionize healthcare delivery in Northern Nigeria</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1684607632041-32d729cdee35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwbWVkaWNhbCUyMGNsaW5pY3xlbnwxfHx8fDE3NjAxNzgyODJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Maternal Health Program"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="mb-2">Modern Medical Facilities</h4>
-                <p className="text-sm text-gray-600">State-of-the-art diagnostic and treatment centers serving the people of Katsina</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1650153265880-889a8b60a10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOaWdlcmlhJTIwbWVkaWNhbCUyMG91dHJlYWNofGVufDF8fHx8MTc2MDE3ODI4Mnww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Smart Health Records"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="mb-2">Telemedicine Services</h4>
-                <p className="text-sm text-gray-600">Bridging the gap in healthcare access through remote consultations and digital health services</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1696861308115-54a5e5a134b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGhhcm1hY2V1dGljYWwlMjBzZXJ2aWNlcyUyMGluJTIwbm9ydGhlcm4lMjBuaWdlcmlhfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"
-                alt="Telemedicine Access"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h4 className="mb-2">Pharmaceutical Services</h4>
-                <p className="text-sm text-gray-600">Ensuring access to quality medications and pharmaceutical care for all residents</p>
-              </div>
-            </div>
+            {/* Blog/News Cards with Framer Motion */}
+            {[
+              {
+                src: "https://images.unsplash.com/photo-1718010588689-9806ce642d39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwZWxkZXJseSUyMHBhdGllbnQlMjBjYXJlfGVufDF8fHx8MTc2MDc1Mzg4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+                alt: "Community Health Outreach",
+                title: "Community Health Outreach",
+                desc: "Providing accessible healthcare services to underserved communities across Kano State"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1632054229892-21103035a686?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwZG9jdG9yJTIwcGF0aWVudHxlbnwxfHx8fDE3NjAxNzgyODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+                alt: "Senior Care Services",
+                title: "Quality Patient Care",
+                desc: "Delivering exceptional medical consultations and treatments to families in Katsina communities"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwdGVjaG5vbG9neSUyMEFmcmljYXxlbnwxfHx8fDE3NjAxNzgyODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+                alt: "AI-Powered Disease Detection",
+                title: "AI-Powered Healthcare Solutions",
+                desc: "Implementing cutting-edge technology to revolutionize healthcare delivery in Northern Nigeria"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1684607632041-32d729cdee35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBZnJpY2FuJTIwbWVkaWNhbCUyMGNsaW5pY3xlbnwxfHx8fDE3NjAxNzgyODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+                alt: "Maternal Health Program",
+                title: "Modern Medical Facilities",
+                desc: "State-of-the-art diagnostic and treatment centers serving the people of Katsina"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1650153265880-889a8b60a10b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOaWdlcmlhJTIwbWVkaWNhbCUyMG91dHJlYWNofGVufDF8fHx8MTc2MDE3ODI4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+                alt: "Smart Health Records",
+                title: "Telemedicine Services",
+                desc: "Bridging the gap in healthcare access through remote consultations and digital health services"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1696861308115-54a5e5a134b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGhhcm1hY2V1dGljYWwlMjBzZXJ2aWNlcyUyMGluJTIwbm9ydGhlcm4lMjBuaWdlcmlhfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+                alt: "Telemedicine Access",
+                title: "Pharmaceutical Services",
+                desc: "Ensuring access to quality medications and pharmaceutical care for all residents"
+              }
+            ].map((card, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-105 border border-transparent hover:border-purple-300 transition-all duration-300 transform transition-transform"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <ImageWithFallback 
+                  src={card.src}
+                  alt={card.alt}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h4 className="mb-2">{card.title}</h4>
+                  <p className="text-sm text-gray-600">{card.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
