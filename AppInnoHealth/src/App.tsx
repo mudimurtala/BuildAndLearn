@@ -1,4 +1,5 @@
-import { Menu, X, Activity, Users, Heart, TrendingUp, Smartphone, Calendar, FileText, MessageSquare, Shield, Database, ChartBar, UserCheck, ChevronDown } from "lucide-react";
+// ...existing code...
+import { Menu, X, Activity, Users, Heart, TrendingUp, Smartphone, Calendar, FileText, MessageSquare, Shield, Database, ChartBar, UserCheck, ChevronDown, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
@@ -590,9 +591,18 @@ export default function App() {
             <div>
               <h4 className="mb-4">Contact Us</h4>
               <ul className="space-y-2 text-sm opacity-90">
-                <li><a href="#" className="hover:underline">info@innohealthafrica.com</a></li>
-                <li><a href="#" className="hover:underline">+234 804 284 9572</a></li>
-                <li><a href="#" className="hover:underline">Kaduna & Katsina States, Nigeria</a></li>
+                <li className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-purple-200" />
+                  <a href="mailto:info@innohealthafrica.com" className="hover:underline">info@innohealthafrica.com</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-purple-200" />
+                  <a href="tel:+2348042849572" className="hover:underline">+234 804 284 9572</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-purple-200" />
+                  <span>Kaduna & Katsina States, Nigeria</span>
+                </li>
               </ul>
             </div>
 
