@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "github.com/01-edu/z01"
 
 func main() {
     for i := '0'; i <= '9'; i++ {
@@ -13,15 +13,28 @@ func main() {
                     continue
                 }
 
-                fmt.Printf("%c%c%c", i, j, k)
+                z01.PrintRune(i)
+                z01.PrintRune(j)
+                z01.PrintRune(k)
 
                 if ! (i == '7' && j == '8' && k == '9') {
-                    fmt.Printf(", ")
+                    z01.PrintRune(',')
+                    z01.PrintRune(' ')
                 }
                 
             }
         }
     }
-    fmt.Printf("\n")
+    z01.PrintRune('\n')
 }
+
+
+
+
+// hhhhhhhhhh
+// gggggggggg
+// jjjjjjjjjj
+// fmt.Printf("%c%c%c", i, j, k)
+// fmt.Printf(", ")
+// fmt.Printf("\n")
 
