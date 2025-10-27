@@ -1,6 +1,6 @@
 package main
 
-// Write a function that prints in ascending order and on a single line: 
+// Write a function that prints in ascending order and on a single line:
 // all possible combinations of two different two-digit numbers.
 // These combinations are separated by a comma and a space.
 
@@ -17,7 +17,7 @@ func main() {
 				z01.PrintRune(' ')
 			}
 		}
-		
+
 	}
 	z01.PrintRune('\n')
 }
