@@ -1,1 +1,0 @@
-print("mytools package loaded")

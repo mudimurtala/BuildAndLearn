@@ -1,8 +1,0 @@
-node_modules
-
-# Ignore compiled Python files
-__pycache__/
-*.pyc
-
-# Ignore secret keys file
-.env

@@ -1,1 +1,0 @@
-# Steeple Chase

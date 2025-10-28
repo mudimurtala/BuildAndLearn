@@ -1,7 +1,0 @@
-pandas              # For handling and analyzing data (like a table or Excel sheet)
-numpy               # For fast math and working with numbers
-scikit-learn        # For training the AI model (pattern recognition)
-streamlit           # To create the web application/dashboard
-plotly              # For beautiful, interactive charts and graphs
-matplotlib          # For basic charts and data visualization
-joblib              # For saving and loading the trained AI model

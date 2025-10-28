@@ -1,1 +1,0 @@
-print("textstuff subpackage loaded")

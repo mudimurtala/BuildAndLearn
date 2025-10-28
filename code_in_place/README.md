@@ -1,1 +1,0 @@
-# Stanford Code In Place Program
