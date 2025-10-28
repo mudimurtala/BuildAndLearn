@@ -1,0 +1,4 @@
+timestamp,co2_level,temperature,humidity,predicted_occupancy
+2025-06-15T09:30:27,800,25,50,4
+2025-06-15T09:30:33,800,25,50,4
+2025-06-15T09:30:37,1593,25,50,6

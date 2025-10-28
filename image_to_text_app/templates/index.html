@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent OCR Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mudi's OCR Tool</h1>
+        <p class="subtitle">Extract text from your images with ease using Python!</p>
+
+        {% if error_message %}
+            <div class="error-message">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <div class="main-content-flex">
+            <div class="column">
+                <div class="upload-section">
+                    <p>Ready to digitize your documents? Upload an image below.</p>
+                    <form method="POST" action="/" enctype="multipart/form-data">
+                        <input type="file" name="image_file" accept="image/*" required>
+                        <button type="submit">Extract Text Now</button>
+                    </form>
+                </div>
+            </div>
+
+            {% if extracted_text is not none %}
+                <div class="column">
+                    <div class="result-section">
+                        <h2 class="section-header">Extracted Text:</h2>
+                        <pre>{{ extracted_text if extracted_text else "No text found in the image or text was empty. Try an image with clear, readable text." }}</pre>
+
+                        {% if download_link %}
+                            <div class="download-link">
+                                <a href="{{ download_link }}" download>Download Extracted Text (.txt)</a>
+                            </div>
+                        {% else %}
+                            <p class="no-text-found">No downloadable text file (perhaps no text was extracted).</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

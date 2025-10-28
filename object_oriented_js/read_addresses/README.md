@@ -1,0 +1,2 @@
+# ChatGPPT Prompt
+Write a program that reads a list of addresses from a text file called addresses.txt and checks to see if the website at each address is up. If an address doesn't have http:// or https:// in front of it, the program should add it. It should output each address followed by "up" if the website is up or "down" if the website is down.

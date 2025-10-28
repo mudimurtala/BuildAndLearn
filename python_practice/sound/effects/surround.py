@@ -1,0 +1,12 @@
+# Absolute import
+from sound.effects import echo
+
+# Relative imports
+from . import echo as rel_echo          # Same package
+from ..filters import equalizer         # Go up one level, then into filters
+
+def surround_sound():
+    print("Surround sound ON!")
+    echo.echofilter()        # Absolute path call
+    rel_echo.echofilter()    # Relative path call
+    equalizer.adjust()
